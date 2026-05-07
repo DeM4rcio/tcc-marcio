@@ -1,0 +1,99 @@
+\chapter[REVISÃO ESTRUTURADA DA LITERATURA]{REVISÃO ESTRUTURADA DA LITERATURA}
+
+\section{Protocolo}
+
+Entendimento sobre o Protocolo
+
+\subsection{String de Busca}
+
+Protocolo PICO
+
+
+\begin{table}[h]
+    \centering
+    \caption{PICO Adaptado}
+    \label{tab-PICO}
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Elementos} &  \textbf{Termos Relacionados} \\
+        \hline
+        \textbf{População} & software product quality, Internal software product quality, Quality software, software product, Application Quality, Structural Quality, software development, application development, systems development, software engineering \\
+		\hline
+        \textbf{Intevenção} & static analysis, software inspection, code inspection, quality verification, software due diligence, acceptance testing, supplier*, “vendor  \\
+		\hline
+        \textbf{Resultado} & Maintainability, testability, modularity, quality model, software metric*, quality measure*, measurement interpretation, calculation formula*, reference value*, release acceptance, release sign-off  \\
+		\hline
+    \end{tabular}
+\end{table}
+
+
+Montagem da string de busca\dots
+
+\begin{center}
+    \textit{( "software product quality" OR "Internal software product quality" OR "Quality software" OR "software product" OR "Application Quality" OR "Structural Quality" OR "software development" OR "application development" OR "systems development"  OR "software engineering" ) AND ( "static analysis" OR "software inspection" OR "code inspection" OR "quality verification" OR "software due diligence" OR "acceptance testing" OR "supplier*" OR “vendor* “) AND ( "Maintainability" OR "testability" OR "modularity" OR "quality model" OR "software metric*" OR "quality measure*" OR "measurement interpretation" OR "calculation formula*" OR "reference value*" OR "release acceptance" OR "release sign-off" )
+}
+\end{center}
+
+Total de 261 artigos
+
+\section{Seleção de Artigos}
+\begin{table}[h]
+    \centering
+    \caption{Protocolo de Busca}
+    \label{tab-PICO}
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Item} &  \textbf{Descrição} \\
+        \hline
+        Questões Secundárias de Pesquisa & \begin{enumerate}[nosep,  leftmargin=*]
+    \item Quais são os problemas identificados em qualidade do produto  em produtos de softwares terceirizados?
+    \item Quais são os modelos de qualidade para avaliação de manutenibildiade dos produtos de softwares utilizados na terceirização?
+    \item Quais são as métricas utilizadas para aferição de modularidade e testabilidade em códigos?
+    \item Quais ferramentas são utilizadas para coletas de dados para aferição de testabilidade e modularidade?
+    \item Como os resultados das métricas e ferramentas de qualidade são agregados para embasar a avaliação e o aceite técnico da entrega de um fornecedor terceirizado?
+\end{enumerate} \\
+		\hline
+        String de Busca & Tabela~\ref{tab-PICO}  \\
+		\hline
+        Critérios de Inclusão & \begin{enumerate}[nosep, leftmargin=*]
+            \item O título e resumo tem relação com ao menos uma pergunta de pesquisa
+            \item O artigo avalia modelos de qualidade com foco em manutenibilidade
+            \item O artigo tem como foco principal em produto de software do ponto de vista de modularidade e testabilidade
+            \item O artigo inclui validação experimental
+        \end{enumerate}  \\
+		\hline
+        Critérios de Exclusão & \begin{enumerate}[nosep, leftmargin=*]
+            \item Artigos duplicados
+            \item O artigo não está em Inglês ou português
+            \item O artigo envolve o processo de desenvolvimento de software como consequência na qualidade do produto.
+            \item O artigo envolve uso de IA como consequência da qualidade do produto de software
+            \item O artigo não atende ao menos uma pergunta de pesquisa
+        \end{enumerate} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Protocolo de Busca (Continuação)}
+    \label{tab-PICO-parte2}
+    \begin{tabular}{|l|p{12cm}|}
+        \hline
+        \textbf{Item} &  \textbf{Descrição} \\
+        \hline
+        Formulário de Extração & \begin{enumerate}
+            \item Título
+            \item Resumo
+            \item Ano de Publicação
+            \item Fonte de Publicação
+            \item Autores
+            \item Palavras-chave
+            \item Problemas identificados em qualidade do produto em produtos de softwares terceirizados
+            \item Modelos de qualidade para avaliação de manutenibilidade na terceirização
+            \item Métricas utilizadas para aferição de modularidade e testabilidade
+            \item Análise de Modelo de Manutenibilidade
+            \item Ferramentas utilizadas para coletas de dados
+        \end{enumerate} \\
+        \hline
+    \end{tabular}
+\end{table}
