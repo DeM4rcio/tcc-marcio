@@ -1,20 +1,21 @@
 
 \chapter[Introdução]{Introdução}
 
+
 \section{Contexto}
 
-A evolução da enganharia de software trouxe à tona debates fundamentais sobre qualidade dos produtos desenvolvidos. Essa discussão tem ínico em meados dos anos 70 com a criação do primeiro modelo de qualidade teorizado Modelo McCall. Posteriormente, o modelo Boehm expandiu essa visão, categorizando os fatores de qualidade em diferentes níveis de abstração: Os fatores de alto nível, como, utilidade (pespectiva de qualidade em uso), Manutenibilidade (pespectiva em qualidade do produto), e portabilidade (perspectiva de adaptação do software para diferentes mudanças). Sendo esses os modelos pilares para consolidação dos modelos subsequentes FURPS e Dromey, culminando, em 2001, a publicação da primeira norma sobre qualidade de software ISO/IEC 9126. O avanço tecnológico e a globalização impulsionaram revisõse contínuas desses padrões, resultando na atual normal ISO/IEC 25010, que estabelece os parâmetros contemporâneos para a avaliação de qualidade de software.
+A evolução da enganharia de software trouxe à tona debates fundamentais sobre qualidade dos produtos desenvolvidos. Essa discussão tem ínico em meados dos anos 70 com a criação do primeiro modelo de qualidade teorizado Modelo McCall. Posteriormente, o modelo Boehm expandiu essa visão, categorizando os fatores de qualidade em diferentes níveis de abstração: Os fatores de alto nível, como, utilidade (pespectiva de qualidade em uso), Manutenibilidade (pespectiva em qualidade do produto), e portabilidade (perspectiva de adaptação do software para diferentes mudanças). Sendo esses os modelos pilares para consolidação dos modelos subsequentes FURPS e Dromey, culminando, em 2001, a publicação da primeira norma sobre qualidade de software ISO/IEC 9126. O avanço tecnológico e a globalização impulsionaram revisõse contínuas desses padrões, resultando na atual normal ISO/IEC 25010, que estabelece os parâmetros contemporâneos para a avaliação de qualidade de software.\cite{miguel2014review}
 
-No contexto de produtos de sofware direcionandos ao cidadaão, a garantia de qualidade torna-se um critério crítico. No setor público, a estratégia de terceirização de desenvolvimento é amplamente adotada como meio de otimizar custos e trasnferir a carga de operacionalização técnica para a iniciativa privada. O arcabouço leagl primário que rege essas contratações no Brasil é a NOva lei de Licitações e Contratos ( lei). Contudo, a delegação de desenvolvimento não isenta a Administração Pública da responsabilidade sobre o resultado. Quando os requisitos de qualidade não são rigirosamente antendidos, o impacto recai de forma direta e imediata sobre o usuário final, comprometendo a prestação do serviço público digital.
+No contexto de produtos de sofware direcionandos ao cidadão, a garantia de qualidade torna-se um critério crítico. No setor público, a estratégia de terceirização de desenvolvimento é amplamente adotada como meio de otimizar custos e trasnferir a carga de operacionalização técnica para a iniciativa privada. O arcabouço leagl primário que rege essas contratações no Brasil é a Nova lei de Licitações e Contratos \cite{brasil2021lei}. Contudo, a delegação de desenvolvimento não isenta a Administração Pública da responsabilidade sobre o resultado. Quando os requisitos de qualidade não são rigirosamente antendidos, o impacto recai de forma direta e imediata sobre o usuário final, comprometendo a prestação do serviço público digital.
 
-Para orientar e padronizar essas contratações, a Secretaria de Governo Digital (SGD) estabelceu por meio da Portaria número 750 - a qual será aprofundada no Capítulo 2. Embora o modelo tente trazer com maior feemencia um calculo adequado para a qualidade código entregue pela contratada (seção 12), ela ainda se mostra insuficiente para garantir a completude da qualidade de um produto de software, e deixa em aberto para quais modelos de qualidade e a forma como o mesmo será aferido (colocar as seções do modelo).
+Para orientar e padronizar essas contratações, a Secretaria de Governo Digital (SGD) estabelceu por meio da Portaria número 750 \cite{brasil2023portaria750} - a qual será aprofundada no Capítulo 2. Embora o modelo tente trazer com maior feemencia um cálculo adequado para a qualidade código entregue pela contratada \cite[cap. 12]{brasil2023portaria750}, ela ainda se mostra insuficiente para garantir a completude da qualidade de um produto de software, e deixa em aberto para quais modelos de qualidade e a forma como o mesmo será aferido \cite[cap. 2]{brasil2023portaria750}.
 
 Consequentemente, a aplicação rigorosa de modelos de qualidade em contratos de terceirização permanece na dificuldade de estabelcer métricas estritamente objetivas. Essa lacuna operacional e contratual reconduz o setor público aos desafios já debatidos na literatura cientifica: a necessidade de definir métodos inequívocos e auditáveis para mensurar a qualidade de software entregue por terceiros.
 
 
 \section{Problema}
 
-O ápice das discussões sobre qualidade de software nos anos de 2010 a 2015, promoveu a elaboração de muitos modelos de qualidade para aferição mais adequada da real qualidade de um produto, entrentando devido a vasta diversidade propostas, e também a não completude dos mesmos, traz uma insegurança para aderência institucional. autor tal , afirma que as decisões de uma contratação e indicadores devem ser menos subjetivos possíveis. 
+O ápice das discussões sobre qualidade de software nos anos de 2010 a 2015, promoveu a elaboração de muitos modelos de qualidade para aferição mais adequada da real qualidade de um produto, entrentando devido a vasta diversidade propostas, e também a não completude dos mesmos, traz uma insegurança para aderência institucional. autor tal , afirma que as decisões de uma contratação e indicadores devem ser menos subjetivos possíveis.\cite{jebreen2023systematic} 
 
 Diante do alto nível de abstração conceitual de normas como as ISO/IEC 25010 e de outros modelos presentes na literatura, o modelo de contratação da SGD delega a operacionalização dessas métricas. Conforme descrito em sua Seção tal, a definição da metodologia para a aferição da qualidade do produto de software foca sob a responsabilidade da própria contratante. O mesmo prevê como alternativa a contratação de outra empresa para aderência de qualidade. O reflexo disso está no cálculo de indicadores sobre qualidade de codigo que caracteriza os requisitos de qualidade por parte da contratante.
 
@@ -22,7 +23,6 @@ Diante do alto nível de abstração conceitual de normas como as ISO/IEC 25010 
 
 A definição da questão de pesquisa foi elaborada utilizando a abordagem Goal Question Metric (GQM). Essa tem como obejtivo definir de forma hierárquica, os objetivos a serem alcançados, as perguntas a serem respondidas para cumprir tais objetivos e as métricas necessárias para responder a cada pergunta de forma quantitativa.
 
-GQM
 
 \begin{table}[h]
     \centering
@@ -65,7 +65,10 @@ O obejtivo geral deste trabalho é avaliar a qualidade do produto Agenda DF, no 
 
 \section{Composição e estrutura do trabalho}
 
--- observção que não precis ser validado -- 
+\begin{observacao}
+Este capítulo (1.5) não precisa ser validado.
+\end{observacao}
+
 
 A formatação do trabalho como um todo considera três elementos principais: 
 (1) pré-textuais, (2) textuais e (3) pós-textuais. Cada um destes, pode se 
@@ -123,7 +126,13 @@ edição direta, e devem ser deixados como estão na grande maioria dos casos.
 Nesta é detalhado a primeira etapa da monografia, que consiste no levantamento inicial do problema a ser explorado, e a definição da proposta empírica. Abaixo temos o Cronograma correspondentes
 
 
-figura
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{figuras/cronograma-primeira.pdf}
+	\caption{Cronograma de atividades}
+	\label{fig-cronograma}
+\end{figure}
+
 
 
 \begin{enumerate}
