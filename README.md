@@ -9,12 +9,12 @@ http://creativecommons.org/licenses/by/3.0/
 Desenvolvido e adaptado pelo professor Edson Alves <edsomjr@gmail.com>.
 
 ## Dependências
-Para utilizar, certifique-se de ter instalados no seu ambiente o [Docker](https://docs.docker.com/engine/install/) e o [Docker-compose](https://docs.docker.com/compose/install/).
+Para utilizar, certifique-se de ter instalados no seu ambiente o [Docker](https://docs.docker.com/engine/install/) e o [Docker Compose](https://docs.docker.com/compose/install/) (plugin `docker compose`, sem hífen; o binário legado `docker-compose` também funciona).
 
 ## Construindo imagem
 Construa a imagem Docker que será utilizada com o comando:
 ```
-docker-compose build latex
+docker compose build latex
 ```
 
 ## Edição do template
@@ -23,16 +23,17 @@ Os arquivos para edição do template de TCC estão localizados na pasta `latex`
 ## Compilando o template de TCC e gerando o PDF
 Execute o comando:
 ```
-docker-compose up
+docker compose up
 ```
 
-Pronto! o PDF do seu projeto estará disponível em `latex/tcc.pdf`.
+Esse comando roda `make clean && make` dentro do container, usando `pdflatex` com o ciclo `pdflatex → bibtex → pdflatex → pdflatex`.
 
+Pronto! o PDF do seu projeto estará disponível em `latex/TCC_FGA.pdf` (e também em `latex/tcc.pdf`).
 
-## Limpando 
+## Limpando
 Para limpar os arquivos gerados pelo latex:
 ```
-docker-compose run latex bash -c 'make clean'
+docker compose run --rm latex bash -c 'make clean'
 ```
 ### FAQ
 
