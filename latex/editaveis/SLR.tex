@@ -6,11 +6,16 @@ O presente capítulo irá compôr o uso do protocolo da Revisão Estruturada, a 
 
 O presente protocolo foi baseado no modelo proposto por \citeonline{kitchenham2007guidelines}. Dessa forma será divida em: planejamento, condução e síntese dos dados.
 
-\subsection{Planejamento da Revisão Estruturada da Literatura}
+\subsection{String de Busca}
 
-\subsubsection{String de Busca}
 
 As bases de dados acadêmicas detêm de um grante quantitativos de artigos, dessa forma, requer de o uso de um protocolo para a indexação adequada dos mesmos a serem analisados dentro do escopo da pesquisa. Tendo em vista o grau de sensibilidade da string de busca, qualquer grau de incoerência pode acarretar em um número excessivo de artigos sem relação com o tema da pesquisa, ou o inverso, ocorrer de ter um número insuficiente de estudos para responder à questão de pesquisa.
+
+Por esta razão, o protolco PICO foi utilizado para guiar a elaboração de ums string de busca adequada às necessidades desta monografia. Entretanto pelo protocolo ter origem da área de pesquisa da medicina, foi necessário uma adequação para a área de Engenharia de Software. Uma representação visual que facilita a compreensão do protocolo pode ser vista na Figura 6.
+
+Figura
+
+As adaptações do protocolo, trouxeram novos significados aos elementos comumentes utilizados. Por exemplo, o termo \textbf{Paciente}, utilizado para indicar o perfil do paciente, passa a representar a área de aplicação, ou a População, neste caso, a qualidade de software. A \textbf{Intervenção}, deixa de significar "tratamento médico" para se referir a metodologia, métodos, técnicas ou procimentos avaliados para a medição de qualidade de software. Já ao que se trata de \textbf{Resultados} o significado se mantém, que no contexto dessa pesquisa refere-se aos efeitos ou consequências observadas; em especial foi adicionado um novo elemento relacionando o \textbf{Contexto}, que direcionou os resultados da pesquisa para o contexto de tercerização. Por fim, a \textbf{Comparação} que está relacionada a investigar como a intervenção proposta se relaciona com outras propostas de intervenção, essa não pode ser avaliada, visto que esta muito alinhada com os objetivos da medicina que na Engenharia de Software. A seguir a definição de cada elementos usado no modelo estão definidos na Tabela 2
 
 
 \begin{table}[h]
@@ -30,17 +35,21 @@ As bases de dados acadêmicas detêm de um grante quantitativos de artigos, dess
     \end{tabular}
 \end{table}
 
-
-Montagem da string de busca\dots
+Para construir a estratégia de busca, utilizou-se o operador booleano OR entre os termos de um mesmo elemento, visando maximizar a abrangência da pesquisa. Somados os grupos de termos com o operador AND que foi aplicado para realizar a intersecção entre os diferentes componentes do protocolo PICO, garantindo a recuperação exclusiva de estudos alinhados às questões de pesquisa. Por fim, a sintaxe foi adaptada com os parâmetros específicos da base de dados SCOPUS, originando a seguinte expressão de busca:
 
 \begin{center}
     \textit{TITLE-ABS-KEY ( ( "software product quality" OR "Internal software product quality" OR "Quality software" OR "software product" OR "Application Quality" OR "Structural Quality" OR "software development" OR "systems development" OR "code quality" OR "Software health" OR "structural health" OR "product quality attribute*" OR "quality-driven development" OR "software characteristics" OR "software artifact quality" OR "codebase health" OR "system quality" OR "source code quality" OR "software integrity" OR "software robustness" OR "software reliability" ) AND ( "Maintainability" OR "testability" OR "modularity" OR "quality model" OR "software metric*" OR "quality measure" OR "measurement interpretation" OR "release acceptance" OR "release sign-off" OR "ISO/IEC 25010" OR "ISO 25010" OR "ISO/IEC 9126" OR "ISO 9126" OR "ISO/IEC 25000" OR "SQuaRE" OR "QATCH" OR "SQALE" OR "Q-Rapids" OR "technical debt" OR "SQM" OR "Software Quality Management" OR "quality attributes" OR "software measurement" OR "code metrics" OR "quality characteristics" OR "internal metrics" OR "structural metrics" OR "complexity metrics" OR "size metrics" OR "quality indicators" OR "software analytics" OR "reusability" OR "analyzability" OR "modifiability" OR "McCabe metric*" OR "quality criteria" OR "software evaluation" OR "metric model" ) AND ( "Outsourcing" OR "External Development" OR "Subcontracting" OR "Third-party Development" OR "Staff Augmentation" OR "Dedicated Team" OR "Dedicated Development Center" OR "Project-based Outsourcing" OR "IT Sourcing" OR "offshoring" OR "vendor*" OR "supplier" OR "public procurement" OR "IT procurement" OR "IS procurement" OR "tendering" OR "buyer-provider relations" OR "contract management" OR "backsourcing" OR "insourcing" OR "Brazil" OR "Brazilian" OR "Brasil" OR "Lei 14.133" OR "Lei 14133" OR "Lei 8.666" OR "Lei 8666" OR "Lei 13.303" OR "Lei 10.520" OR "IN 01/2019" OR "IN 94/2022" OR "Instrução Normativa" OR "Public Administration" OR "Governmental" OR "TCU" OR "Tribunal de Contas" OR "SLA" OR "Service Level Agreement" OR "Software acquisition" OR "Information Technology Contracting" OR "Public sector" OR "GovTech" OR "Bidding" OR "Terms of Reference" OR "vendor management" OR "supplier selection" OR "government contracting" OR "public bidding" OR "public purchasing" OR "Request for Proposal" OR "RFP" OR "government procurement" OR "e-procurement" OR "software acquisition process" OR "contract execution" OR "software factory" OR "fábrica de software" OR "IT outsourcing" OR "ITO" OR "public contract*" OR "government tender*" OR "public administration IT" OR "state-owned enterprise*" OR "SISP" OR "CGU" OR "audit court*" OR "contractual compliance" OR "IT governance" OR "governança de TI" OR "Portaria 750" OR "Portaria 750/2023" OR "Portaria SGD" OR "Portaria SGD/MGI" OR "Secretaria de Governo Digital" OR "Government Ordinance" OR "Portaria" ) )
 }
 \end{center}
 
-Total de 261 artigos
+\subsection{Seleção dos Artigos}
 
-\section{Seleção de Artigos}
+Com a string de busca criada, foram definidos os critérios de inclusão e exclusão visando selecionar apenas os artigos mais pertinentes ao escopo da pesquisa. A partir da leitura do Título, Resumo e palavras-chaves dos artigos extraidos da string de busca, foram rejeitados aqueles que não atendia aos critérios de inclusão ou se enquadrava aos critérios de exclusão, e aceitados aqueles que atendia a todos os critérios de inclusão. Posteriormente a partir do estudos selecionados foi preenchido o formulário de extração a fim de atender as perguntas de pesquisa secundárias. O Protocolo completo está definido na Tabela.
+
+Ao todo foram analisado 501 artigos resultantes da string de busca, onde 51 desses foram selecionados e lidos de maneira integral. Esses artigos foram obtidos na base de dados Scopus no dia 14 de maio de 2026. A calibração da string de busca era determinado se o artigo Tools challanges  estava presente na base de busca e isso identificava que os resultados estavam dentro do escopo da pesquisa. Os artigos selecionados estão dipstos na tabela .
+
+
+
 \begin{table}[h]
     \centering
     \caption{Protocolo de Busca}
@@ -55,23 +64,23 @@ Total de 261 artigos
     \item Quais são as métricas utilizadas para aferição de modularidade e testabilidade em códigos?
     \item Quais ferramentas são utilizadas para coletas de dados para aferição de testabilidade e modularidade?
     \item Como os resultados das métricas e ferramentas de qualidade são agregados para embasar a avaliação e o aceite técnico da entrega de um fornecedor terceirizado?
+    \item Quais são as práticas de desenvolvimento ou gerenciamento adotadas no processo de aferição da qualidade?
+    \item Quais são as práticas adotadas no processo de aceitação de releases?
 \end{enumerate} \\
 		\hline
         String de Busca & Tabela~\ref{tab-PICO}  \\
 		\hline
         Critérios de Inclusão & \begin{enumerate}[nosep, leftmargin=*]
-            \item O título e resumo tem relação com ao menos uma pergunta de pesquisa
-            \item O artigo avalia modelos de qualidade com foco em manutenibilidade
-            \item O artigo tem como foco principal em produto de software do ponto de vista de modularidade e testabilidade
-            \item O artigo inclui validação experimental
+            \item O artigo trata de qualidade interna de produto de software, ou de terceirização/contratação de desenvolvimento com abordagem de qualidade de produto
+            \item O artigo propõe, avalia ou aplica modelos, métricas, indicadores ou ferramentas relacionados à Manutenibilidade ou suas subcaracterísticas
         \end{enumerate}  \\
 		\hline
         Critérios de Exclusão & \begin{enumerate}[nosep, leftmargin=*]
+            \item O texto completo do artigo não está disponível
+            \item O domínio de aplicação do estudo é exclusivamente não-web (ex: sistemas embarcados, sistemas de dispositivos móveis)
             \item Artigos duplicados
-            \item O artigo não está em Inglês ou português
-            \item O artigo envolve o processo de desenvolvimento de software como consequência na qualidade do produto.
-            \item O artigo envolve uso de IA como consequência da qualidade do produto de software
-            \item O artigo não atende ao menos uma pergunta de pesquisa
+            \item O artigo não está escrito em Inglês ou português
+            \item O artigo trata exclusivamente de qualidade de processo de desenvolvimento, governança de TI, gestão de contratos ou mercado de terceirização, sem avaliar qualidade interna do produto de software
         \end{enumerate} \\
         \hline
     \end{tabular}
@@ -101,3 +110,120 @@ Total de 261 artigos
         \hline
     \end{tabular}
 \end{table}
+
+
+
+\begin{table}[htbp]
+    \centering
+    \caption{Artigos Selecionados da Revisão Estruturada da Literatura}
+    \label{tab-artigos-slr}
+    \begin{tabular}{|c|p{10cm}|c|}
+        \hline
+        \textbf{№} & \textbf{Título} & \textbf{Revista} \\
+        \hline
+        1 & Empirical Investigation of Influencing Factors Regarding Offshore Outsourcing Decision of Application Maintenance & Sim \\
+        \hline
+        2 & Quality Management in Software Development & Sim \\
+        \hline
+        3 & Source Code Metrics: A Study on Scientific Publications in Brazilian Symposia and the Perception of Computing Students & Sim \\
+        \hline
+        4 & Technical Debt Management in the Brazilian Federal Administration & Não \\
+        \hline
+        5 & Assessing technical debt in automated tests with codescene & Não \\
+        \hline
+        6 & Alignment of Software Product Quality Goals in Two Outsourcing Relationships & Não \\
+        \hline
+        7 & A dynamic model of offshore software development & Sim \\
+        \hline
+        8 & Metric based software project performance monitoring model & Sim \\
+        \hline
+        9 & Effective quality management: Value- and risk-based software quality management & Sim \\
+        \hline
+        10 & An Importance-Performance Analysis Concerning the Quality of Indonesia's e-Procurement System Based on ISO/EIC 25010:2011 & Não \\
+        \hline
+        11 & Importance of reuse and modularity in system architecture & Não \\
+        \hline
+        12 & Understanding Technical Debt at the Code Level from the Perspective of Software Developers & Não \\
+        \hline
+        13 & An empirical study on the importance of quality among offshore outsourced software development firms in Sri Lanka & Não \\
+        \hline
+        14 & Quality determinants in offshored IS projects: A comparison between projects completed within-budget and over-budget & Sim \\
+        \hline
+        15 & A Systematic Snapshot of Software Outsourcing Challenges & Não \\
+        \hline
+        16 & Manual Tests Do Smell! Cataloging and Identifying Natural Language Test Smells & Não \\
+        \hline
+        17 & An Integrated Approach for Criteria Evaluation and Software Maintenance Process Management: Insights from Global Software Development Perspective & Sim \\
+        \hline
+        18 & Using performance ethnography to explore the human aspects of software quality & Sim \\
+        \hline
+        19 & Evaluation of Determinants of Software Quality in Offshored Software Projects: Empirical Evidences From India & Sim \\
+        \hline
+        20 & A case of information systems pre-implementation failure: Pitfalls of overlooking the key stakeholders' interests & Não \\
+        \hline
+        21 & An evaluation on software traceability in the context of MPS.BR; [Uma avaliação sobre rastreabilidade de software no contexto do MPS.BR] & Não \\
+        \hline
+        22 & Evaluating Software Quality: Application of ISO/IEC 25000 in Public and Private Sectors & Sim \\
+        \hline
+        23 & The relationships between software development processes and software product quality & Sim \\
+        \hline
+        24 & Incorporating qualitative and quantitative factors for software defect prediction & Sim \\
+        \hline
+        25 & CBR insight: Measure and visualize source code quality & Sim \\
+        \hline
+        26 & Significant requirements engineering practices for software development outsourcing & Não \\
+        \hline
+        27 & When management gets serious about managing software & Não \\
+        \hline
+        28 & Evaluation of expected software quality: A customer's viewpoint & Sim \\
+        \hline
+        29 & Employability Assessment of Agile Methods for Software Quality: An Empirical Case Study & Não \\
+        \hline
+        30 & Measuring software product quality using ISO 9126: A systematic review & Sim \\
+        \hline
+        31 & Managing technical debt: An industrial case study & Sim \\
+        \hline
+        32 & Evaluating software component quality from vendors using the primitive cognitive network process with ISO/IEC 9126 & Não \\
+        \hline
+        33 & Technical debt management in Brazilian software organizations: A need, an expectation, or a fact? & Sim \\
+        \hline
+        34 & Tools for monitoring software quality in information systems development and maintenance: five key challenges and a design proposal & Sim \\
+        \hline
+        35 & Quality of protection: Measuring the unmeasurable? & Sim \\
+        \hline
+        36 & Study of a customer satisfaction-oriented model for outsourcing software quality management using Quality Function Deployment (QFD) & Não \\
+        \hline
+        37 & Individualizing Software Production: Bringing Work Back in Microsourcing Practices & Sim \\
+        \hline
+        38 & Empirical analysis of intellectual property risks in software outsourcing & Não \\
+        \hline
+        39 & Investigating the effects of agile practices and processes on technical Debt-The viewpoint of the brazilian software industry & Não \\
+        \hline
+        40 & Promises of open source software for Australian government agencies - An exploratory study & Não \\
+        \hline
+        41 & A consideration of the impact of interactions with module effects on the direct measurement of subjective software attributes & Sim \\
+        \hline
+        42 & Applying testing to enhance software product quality & Não \\
+        \hline
+        43 & Determinants of software quality in offshore development - An empirical study of an Indian vendor & Sim \\
+        \hline
+        44 & Software outsourcing quality achieved by global virtual collaboration & Sim \\
+        \hline
+        45 & An analysis of the factors determining software product quality: A comparative study & Sim \\
+        \hline
+        46 & Characteristics of unmaintainable source code in software development by multiple organizations & Não \\
+        \hline
+        47 & ISO/IEC 9126: an experiment of application on Brazilian software products & Não \\
+        \hline
+        48 & Software quality and CASE tools & Sim \\
+        \hline
+        49 & ISO9000-3 and software measurement & Sim \\
+        \hline
+        50 & SOFTWARE QUALITY MEASUREMENT TOOLS AND TECHNIQUES. & Não \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Resultados}
+
+AQUI
