@@ -1,27 +1,31 @@
-\chapter[REVISÃO ESTRUTURADA DA LITERATURA]{REVISÃO ESTRUTURADA DA LITERATURA}
+\chapter[Revisão Estruturada da Literatura]{Revisão Estruturada da Literatura}
+
+O presente capítulo irá compôr o uso do protocolo da Revisão Estruturada, a fim de levantar o embasamento bibliográfico, respondendo a pergunta principal de pesquisa por intermédio das perguntas secundárias de pesquisa. 
 
 \section{Protocolo}
 
-Entendimento sobre o Protocolo
+O presente protocolo foi baseado no modelo proposto por \citeonline{kitchenham2007guidelines}. Dessa forma será divida em: planejamento, condução e síntese dos dados.
 
-\subsection{String de Busca}
+\subsection{Planejamento da Revisão Estruturada da Literatura}
 
-Protocolo PICO
+\subsubsection{String de Busca}
+
+As bases de dados acadêmicas detêm de um grante quantitativos de artigos, dessa forma, requer de o uso de um protocolo para a indexação adequada dos mesmos a serem analisados dentro do escopo da pesquisa. Tendo em vista o grau de sensibilidade da string de busca, qualquer grau de incoerência pode acarretar em um número excessivo de artigos sem relação com o tema da pesquisa, ou o inverso, ocorrer de ter um número insuficiente de estudos para responder à questão de pesquisa.
 
 
 \begin{table}[h]
     \centering
     \caption{PICO Adaptado}
     \label{tab-PICO}
-    \begin{tabular}{|l|p{10cm}|}
+    \begin{tabular}{|l|p{4cm}|p{10cm}|}
         \hline
-        \textbf{Elementos} &  \textbf{Termos Relacionados} \\
+        \textbf{Elementos} & \textbf{Termo Central} & \textbf{Termos Relacionados} \\
         \hline
-        \textbf{População} & software product quality, Internal software product quality, Quality software, software product, Application Quality, Structural Quality, software development, application development, systems development, software engineering \\
+        \textbf{População} &  Qualidade de Produto de Software  & software product quality, Internal software product quality, Quality software, software product, Application Quality, Structural Quality, software development, systems development, code quality, Software health, structural health, product quality attribute*, quality-driven development, software characteristics, software artifact quality, codebase health, system quality, source code quality, software integrity, software robustness, software reliability \\
 		\hline
-        \textbf{Intevenção} & static analysis, software inspection, code inspection, quality verification, software due diligence, acceptance testing, supplier*, “vendor  \\
+        \textbf{Intevenção} & Medição de qualidade de Software & Maintainability, testability, modularity, quality model, software metric*, quality measure, measurement interpretation, release acceptance, release sign-off, ISO/IEC 25010, ISO 25010, ISO/IEC 9126, ISO 9126, ISO/IEC 25000, SQuaRE, QATCH, SQALE, Q-Rapids, technical debt, SQM, Software Quality Management, quality attributes, software measurement, code metrics, quality characteristics, internal metrics, structural metrics, complexity metrics, size metrics, quality indicators, software analytics, reusability, analyzability, modifiability, McCabe metric*, quality criteria, software evaluation, metric model \\
 		\hline
-        \textbf{Resultado} & Maintainability, testability, modularity, quality model, software metric*, quality measure*, measurement interpretation, calculation formula*, reference value*, release acceptance, release sign-off  \\
+        \textbf{Resultado e Contexto} & Tercerização & Outsourcing, External Development, Subcontracting, Third-party Development, Staff Augmentation, Dedicated Team, Dedicated Development Center, Project-based Outsourcing, IT Sourcing, offshoring, vendor*, supplier, public procurement, IT procurement, IS procurement, tendering, buyer-provider relations, contract management, backsourcing, insourcing, Brazil, Brazilian, Brasil, Lei 14.133, Lei 14133, Lei 8.666, Lei 8666, Lei 13.303, Lei 10.520, IN 01/2019, IN 94/2022, Instrução Normativa, Public Administration, Governmental, TCU, Tribunal de Contas, SLA, Service Level Agreement, Software acquisition, Information Technology Contracting, Public sector, GovTech, Bidding, Terms of Reference, vendor management, supplier selection, government contracting, public bidding, public purchasing, Request for Proposal, RFP, government procurement, e-procurement, software acquisition process, contract execution, software factory, fábrica de software, IT outsourcing, ITO, public contract*, government tender*, public administration IT, state-owned enterprise*, SISP, CGU, audit court*, contractual compliance, IT governance, governança de TI, Portaria 750, Portaria 750/2023, Portaria SGD, Portaria SGD/MGI, Secretaria de Governo Digital, Government Ordinance, Portaria \\
 		\hline
     \end{tabular}
 \end{table}
@@ -30,7 +34,7 @@ Protocolo PICO
 Montagem da string de busca\dots
 
 \begin{center}
-    \textit{( "software product quality" OR "Internal software product quality" OR "Quality software" OR "software product" OR "Application Quality" OR "Structural Quality" OR "software development" OR "application development" OR "systems development"  OR "software engineering" ) AND ( "static analysis" OR "software inspection" OR "code inspection" OR "quality verification" OR "software due diligence" OR "acceptance testing" OR "supplier*" OR “vendor* “) AND ( "Maintainability" OR "testability" OR "modularity" OR "quality model" OR "software metric*" OR "quality measure*" OR "measurement interpretation" OR "calculation formula*" OR "reference value*" OR "release acceptance" OR "release sign-off" )
+    \textit{TITLE-ABS-KEY ( ( "software product quality" OR "Internal software product quality" OR "Quality software" OR "software product" OR "Application Quality" OR "Structural Quality" OR "software development" OR "systems development" OR "code quality" OR "Software health" OR "structural health" OR "product quality attribute*" OR "quality-driven development" OR "software characteristics" OR "software artifact quality" OR "codebase health" OR "system quality" OR "source code quality" OR "software integrity" OR "software robustness" OR "software reliability" ) AND ( "Maintainability" OR "testability" OR "modularity" OR "quality model" OR "software metric*" OR "quality measure" OR "measurement interpretation" OR "release acceptance" OR "release sign-off" OR "ISO/IEC 25010" OR "ISO 25010" OR "ISO/IEC 9126" OR "ISO 9126" OR "ISO/IEC 25000" OR "SQuaRE" OR "QATCH" OR "SQALE" OR "Q-Rapids" OR "technical debt" OR "SQM" OR "Software Quality Management" OR "quality attributes" OR "software measurement" OR "code metrics" OR "quality characteristics" OR "internal metrics" OR "structural metrics" OR "complexity metrics" OR "size metrics" OR "quality indicators" OR "software analytics" OR "reusability" OR "analyzability" OR "modifiability" OR "McCabe metric*" OR "quality criteria" OR "software evaluation" OR "metric model" ) AND ( "Outsourcing" OR "External Development" OR "Subcontracting" OR "Third-party Development" OR "Staff Augmentation" OR "Dedicated Team" OR "Dedicated Development Center" OR "Project-based Outsourcing" OR "IT Sourcing" OR "offshoring" OR "vendor*" OR "supplier" OR "public procurement" OR "IT procurement" OR "IS procurement" OR "tendering" OR "buyer-provider relations" OR "contract management" OR "backsourcing" OR "insourcing" OR "Brazil" OR "Brazilian" OR "Brasil" OR "Lei 14.133" OR "Lei 14133" OR "Lei 8.666" OR "Lei 8666" OR "Lei 13.303" OR "Lei 10.520" OR "IN 01/2019" OR "IN 94/2022" OR "Instrução Normativa" OR "Public Administration" OR "Governmental" OR "TCU" OR "Tribunal de Contas" OR "SLA" OR "Service Level Agreement" OR "Software acquisition" OR "Information Technology Contracting" OR "Public sector" OR "GovTech" OR "Bidding" OR "Terms of Reference" OR "vendor management" OR "supplier selection" OR "government contracting" OR "public bidding" OR "public purchasing" OR "Request for Proposal" OR "RFP" OR "government procurement" OR "e-procurement" OR "software acquisition process" OR "contract execution" OR "software factory" OR "fábrica de software" OR "IT outsourcing" OR "ITO" OR "public contract*" OR "government tender*" OR "public administration IT" OR "state-owned enterprise*" OR "SISP" OR "CGU" OR "audit court*" OR "contractual compliance" OR "IT governance" OR "governança de TI" OR "Portaria 750" OR "Portaria 750/2023" OR "Portaria SGD" OR "Portaria SGD/MGI" OR "Secretaria de Governo Digital" OR "Government Ordinance" OR "Portaria" ) )
 }
 \end{center}
 
