@@ -1,0 +1,170 @@
+\chapter{Planejamento do Estudo de Caso}
+
+Neste capítulo é apresentado o planejamneto do estudo de caso, que será conduzido na segunda etapa do trabalho, onde são estabelecidos os conceitos e definições relacionados a esse método.
+
+\section{Definição}
+
+Segundo \citeonline{yin2001estudo}, o estudo de caso é um método empírico de pesquisa, e neste precisa antender as três condições; o tipo da questão de pesquisa, o controle que o pesquisador possui sobre os eventos comportamentais efetivos e o foco no estudo de campo atual em contraste com a visão histórica. No contexto da Engenharia de Software, esse método científico é particulamente relevante por se tratar de estudo de comportamento e fenômenos complexos e interligados.
+
+Ainda de acordo com \citeonline{yin2001estudo}, o estudo de caso é flexível e interativo. Isso significa que a estrutura do estudo pode se adaptar no decorrer da pesquisa, pois, o pesquisador, ao realizar as interações de coleta e análise dos dados, pode vir a perceber caracterísisticas do caso que não foram identificadas.
+
+Outrossim, a investigação do estudo de caso, enfrenta uma situação única em que haverá muito mais variáveis de interesse do que pontos de dados, e como resultado, baseia-se em várias fontes de evidências com os dados precisando convergir em um formato de triângulo. \cite{yin2001estudo} Dessa forma é necessário determinar se o estudo será holístico ou incorporado; Os holísticos analisam o caso como um todo, ou seja, o fenômeno é visto como um sistema único e integrado. Já os estudos incorporados, tem como principal caracterísistica o aprofundamento em múltiplas unidades de análise dentro de um mesmo caso, permitindo uma análise mais aprofundada.
+
+Por fim, de acordo com Runeson e Höst (2009), é imprescindível que as ameaças à validade sejam mapeadas desde a fase inicial do planejamento metodológico, sob possíbilidade de comprometimento e a solidez dos achados. O modelo estruturado pelos autores divide essas métricas em quatro pespectivas. A validade de construto verifica o alinhamento entre as medidas operacionais e o que de fato se pretende investigar por meio das questões de pesquisa. A validade interna, por sua vez, alerta para o risco de fatores não controlados afetarem as relações causais estabelecidas. Já a validade externa avalia o potencial de generalização do estudo, ou seja, a aplicabilidade dos resultados a cenários com propriedades equivalentes. Por fim, a confiabilidade assegura a independência e a reprodutibilidade da pesquisa, exigindo que os mesmos resultados sejam alcançados caso os procedimentos sejam replicados por outros investigadores.
+
+\section{Objetivo}
+
+O desenvolvimento de software em organizações públicas apresenta desafios significativos no que tange ao controle de qualidade. Entre os fatores que contribuem para esse cenário, destaca-se a subjetividade inerente aos modelos de qualidade normatizados, a exemplo da ISO/IEC 25010. No Brasil, a Lei nº 14.133/2021 \cite{brasil2021lei} regulamenta as contratações públicas no âmbito da União e, em seu artigo 42, estabelece as diretrizes para a prova de qualidade. A legislação exige que a validação do produto apresentado pelos proponentes ocorra mediante 'comprovação de que o produto está de acordo com as normas técnicas determinadas pelos órgãos oficiais competentes, pela Associação Brasileira de Normas Técnicas (ABNT) ou por outra entidade credenciada pelo Inmetro'.
+
+Dessa forma, o objetivo desse estudo consiste em carterizar a qualidade do produto de software do ponto de vista de Manutenibildiade produzido no modelo de tercerização. Afim de determinar de forma quantitativa, o nível de qualidade das versões do produto. Para tanto serão utilizados métodos, técnicas e ferramentas, observadas e propostos ns literatura específica da área de qualidade de software.
+
+\section{Caso}
+
+O caso em estudo neste trabalho é a plataforma Agenda DF. Trata-se de uma plataforma digital que dispõe para os cidadão do Distrito federal diversos tipos de agendamentos de serviços que o GDF oferece, sendo eles; Agendamento de doação de sangue e Médula óssea, Agendamento ao serviços do Na Hora (BRB mobilidade, Procon, Receita federal), e entre outros serviços. O portal efetivou no primeiro trimestre de 2026 somente pelo canal 156, cerca de 46.913 agendamentos, cobrindo todas as Regiões administrativas do Distrito Federal.
+
+
+O fluxo de desenvolvimento e entrega estabelecido no âmbito do contrato firmado entre a Secretaria de Estado de Economia do Distrito Federal (SEEC-DF) e a empresa CAST Informática S/A baseia-se na implementação de uma fábrica de desenvolvimento operada sob o paradigma de metodologias ágeis. O modelo contratual adota diretrizes modernas de governança e ciclo de vida de desenvolvimento de \textit{software}, com faturamento condicionado a entregas iterativas e produtividade atestada, conforme visto na Figura \ref{fluxo-release}.
+
+\begin{figure}
+    \caption{BPMN - Gestão de Entregas e Faturamento}
+	\centering
+	\includegraphics[width=1.0\textwidth]{figuras/fluxo-release.png}
+    {\small\textit{Fonte: Autor.}}
+	\label{fluxo-release}
+\end{figure}
+
+A arquitetura do ciclo de desenvolvimento é hierarquizada de forma temporal e funcional para garantir o controle preciso das entregas. O nível mais alto do fluxo é o Épico (\textit{Epic}), que engloba o conceito amplo do projeto, leva meses para ser concluído e é subdividido em \textit{Releases}. Em um nível intermediário estão as \textit{Features}, que representam as necessidades consolidadas do cliente, desenvolvidas ao longo de semanas e fracionadas em \textit{Sprints}. A execução operacional diária ocorre por meio das Histórias de Usuário (\textit{User Stories}), que traduzem a análise da necessidade a ser entregue dentro de uma \textit{Sprint} padrão de 10 dias. O esforço dessas histórias é detalhado em Tarefas (\textit{Tasks}), mensuradas em horas de trabalho.
+
+Diante disso, a aceitação dos produtos entregues segue um rito de avaliação técnica e negocial estabelecido para resguardar a Administração Pública. O Dono do Produto (\textit{Product Owner}), representando o Estado, possui o prazo de até cinco dias úteis para homologar as \textit{sprints} desenvolvidas. Caso haja inércia no processo de validação, a contratada possui respaldo para faturar a \textit{release} mediante a realização de validações e aferições próprias que comprovem a entrega funcional. O ateste final de conformidade obedece a duas fases estipuladas na legislação: o Recebimento Provisório, para a verificação inicial, e o Recebimento Definitivo, emitido após a comprovação técnica final de que os produtos e serviços entregues atendem a todas as especificações e garantias exigidas contratualmente.
+
+Ao que se refere garantia da qualidade do produto e do código-fonte exige expressamente a implementação de uma fábrica de desenvolvimento e testes ágeis, operada sob as premissas de uma governança de qualidade ágil e da gestão do ciclo de vida de desenvolvimento seguro de \textit{software}, em estrito alinhamento com as melhores práticas de \textit{DevOps}.
+
+No que tange à qualidade externa e à confiabilidade do produto entregue, o contrato estipula uma cláusula rigorosa de garantia. A contratada é obrigada a fornecer um ano de garantia para todos os serviços de desenvolvimento, manutenção e sustentação, contado a partir da data de aceite formal do \textit{software} em ambiente de produção. Durante este período, qualquer erro, falha ou \textit{bug} identificado no sistema deverá ser sanado pela empresa sem quaisquer ônus adicionais para a Administração Pública. 
+
+Para assegurar a manutenção da qualidade interna ao longo do tempo e evitar a degradação da arquitetura sistêmica (como o acúmulo de Dívida Técnica), o contrato estabelece que a Contratante possui o dever de monitorar continuamente o nível de qualidade dos serviços. Caso seja verificado um viés contínuo de desconformidade da prestação do serviço em relação à qualidade exigida, o órgão tem a prerrogativa de intervir, exigir correções tempestivas ou aplicar sanções. 
+
+Este estudo de caso, concentra-se na etapa de aceitação de release, como neste caso não tem nenhum controle de qualidade da perspectiva de código, uma ferramenta será utilizada para aferição de qualidade desde do nível de métrica até a nível de característica (indicador). A análise será puramente estático, utilizando o código fonte como fonte de dados.
+
+\subsection{Estudos Relacionados}
+
+O modelo de qualidade Q-RAPIDS foi idealizado no escopo do projeto europeu H2020 para gerenciar a qualidade e fornecer análises acionáveis durante o ciclo de desenvolvimento rápido de \textit{software} \cite{qrapids2019}. Sua principal contribuição é a integração de fontes heterogêneas de dados para monitorar, de forma holística, a qualidade sob três perspectivas fundamentais: o produto, o processo e o uso \cite{qrapids2019}.
+
+No presente escopo ao uso de qualidade do produto, o Q-RAPIDS fornece diretrizes rigorosas para a medição da \textbf{testabilidade} e da \textbf{modularidade/complexidade} do código. Segundo o modelo, a \textbf{testabilidade} (desempenho de testes) é aferida por meio de métricas extraídas de ferramentas de automação (como \textit{Github Actions}), analisando fatores como o tempo de duração da execução dos testes unitários, a densidade de testes rápidos e a proporção de testes bem-sucedidos em relação a erros ou falhas.
+
+Por sua vez, a aferição da \textbf{modularidade} é conduzida sob o fator de "Qualidade do Código" (\textit{Code Quality}), avaliando a complexidade estrutural das classes e arquivos. O Q-RAPIDS consolida métricas base, como a Complexidade Ciclomática por função, estabelecendo limiares (por padrão, exigindo complexidade abaixo de 10) para classificar os arquivos como complexos ou não-complexos \cite{qrapids2019}.
+
+Para a avaliação da manutenibilidade do ponto de vista de Dívida Técnica e o controle de passivos estruturais no código-fonte, adota-se o método SQALE , introduzido originalmente por Letouzey e Coq \cite{letouzey2010}. Este método fornece uma estrutura objetiva para avaliar o código-fonte de forma aderente à condição de representatividade da teoria da medição, traduzindo as não-conformidades de qualidade em uma metáfora financeira conhecida como Dívida Técnica (\textit{Technical Debt}) \cite{letouzey2010}.
+
+O SQALE estrutura-se por meio de um Modelo de Qualidade e um Modelo de Análise. O Modelo de Qualidade organiza os requisitos não-funcionais (como manutenibilidade, confiabilidade e eficiência) necessários para que o código seja considerado correto \cite{letouzey2010}. O Modelo de Análise, por sua vez, introduz o conceito de Índice de Remediação \cite{letouzey2010}. Em vez de apenas contar defeitos soltos, o modelo estima a distância entre o estado atual do componente e a sua meta de qualidade, calculando o esforço de trabalho (custo ou tempo) estritamente necessário para corrigir as violações encontradas (como duplicação de código, má formatação, falta de comentários ou acoplamento excessivo) \cite{letouzey2010}.
+
+A soma desses Índices de Remediação consolida o \textit{SQALE Quality Index} (SQI), que representa o montante total da \textbf{Dívida Técnica} do software \cite{letouzey2010}. No contexto de contratações públicas baseadas em pontos de função e variabilidade ágil, a mensuração contínua deste índice é vital. Ela impede que a entrega rápida de \textit{sprints} (gerando funcionalidades aparentemente operantes) mascare um acúmulo insustentável de "juros" arquiteturais que, a longo prazo, inviabilizariam a sustentação e evolução do sistema pela Administração Pública \cite{letouzey2010}.
+
+
+
+\section{Pergunta Pesquisa}
+
+O ponto críico do escopo da pesquisa é a definição dos perguntas de pesquisa que precisam ser repondidas de modo que essas respostas atendam as necessidades das unidades de análise. Dessa forma foi utilizado o método GQM para definição das questões específicas, derivadas da questão principal, bem como das métricas correspondentes.
+
+A norma ISO/IEC 25010 define a manutenibilidade como o grau em que um produto de \textit{software} pode ser modificado, englobando correções, melhorias e adaptações a mudanças no ambiente ou em seus requisitos \cite{miguel2014review}. Dentro desta característica principal, destacam-se duas subcaracterísticas essenciais: a modularidade, que consiste no grau em que o sistema é composto por componentes discretos, de forma que a alteração em um componente tenha o mínimo de impacto nos demais \cite{miguel2014review}; e a testabilidade, que representa a facilidade com que o \textit{software} modificado pode ser validado e testado \cite{miguel2014review}. Tais subcaracterísticas serão analisadas neste estudo de caso por meio da extração de métricas de análise estática de código-fonte automatizadas no \textit{pipeline} de CI/CD. Para corroborar com essa avaliação quantitativa e realizar a triangulação da coleta de dados, uma avaliação qualitativa com os membros da equipe é necessária para observar as percepções e os impactos práticos da adoção dessas práticas ágeis no processo de desenvolvimento.
+
+
+\vspace{0.5cm}
+\noindent \textbf{Questão Específica 1: Qual é o nível de vulnerabilidade do \textit{software} entregue no que tange à falta de cobertura de testes e à testabilidade do código ao longo do tempo?}
+
+\begin{itemize}
+    \item \textbf{Métrica 1.1 -- \textit{Passed tests}:} Razão entre os testes unitários que executaram com sucesso (sem erros, falhas ou interrupções) e o total de testes executados na \textit{release}. Esta métrica indica o nível de estabilidade e adequação funcional da entrega.
+    
+    \item \textbf{Métrica 1.2 -- \textit{Fast test builds}:} Proporção de testes (ou \textit{builds} de teste) cuja duração de execução encontra-se abaixo do limiar de tempo máximo aceitável. Em um ambiente de desenvolvimento ágil, testes rápidos são indispensáveis para garantir que a equipe receba \textit{feedback} imediato da esteira de integração contínua (CI) sem gerar gargalos de produtividade.
+    
+    \item \textbf{Métrica 1.3 -- \textit{Test coverage}:} Proporção quantitativa de linhas de código e de caminhos lógicos (condições) que são efetivamente exercitados pela execução da suíte de testes automatizados, demonstrando o nível de blindagem do \textit{software} contra defeitos de regressão.
+\end{itemize}
+
+\vspace{0.5cm}
+\noindent \textbf{Questão Específica 2: Qual é a disparidade da Dívida Técnica acumulada e o nível de manutenibilidade ao longo das entregas (\textit{releases})?}
+\begin{itemize}
+    \item \textbf{Métrica 2.1:} O SQI representa o montante total e global da Dívida Técnica da \textit{release} \cite{letouzey2010}. A evolução deste índice em paralelo com o SMI indicará a disparidade do acúmulo de juros técnicos associados especificamente a defeitos de legibilidade, estrutura, acoplamento e duplicação de código.
+    
+    \item \textbf{Métrica 2.2:} Proporção de arquivos com complexidade ciclomática por função adequada ($\le 10$), garantindo a modularidade do sistema \cite{qrapids2019}.
+    
+    \item \textbf{Métrica 2.3:} Proporção de arquivos cuja densidade de comentários de código encontra-se dentro dos limiares de aceitação (por padrão, entre 10\% e 30\%) \cite{qrapids2019}.
+    
+    \item \textbf{Métrica 2.4:} Proporção de arquivos com densidade de linhas de código duplicadas abaixo do limite aceitável (menor que 5\%) \cite{qrapids2019}.
+    
+    \item \textbf{Métrica 2.5:} Proporção de arquivos totalmente livres de violações de regras de qualidade estáticas classificadas como críticas ou bloqueadoras \cite{qrapids2019}.
+
+\end{itemize}
+
+\vspace{0.5cm}
+\noindent \textbf{Questão Específica 3: Qual é o nível de modularidade e o impacto da complexidade arquitetural no código-fonte Java ao longo das entregas?}
+
+Para avaliar especificamente a arquitetura e a modularidade da aplicação, serão adotadas as métricas de estrutura consolidadas pela ferramenta \textit{CBR Insight} \cite{ludwig2019}, cujos fundamentos teóricos se baseiam na literatura clássica de engenharia de software:
+
+\begin{itemize}
+    \item \textbf{Métrica 3.1 -- Linhas de Código (LOC):} Métrica fundamental de volume que quantifica o tamanho físico do código-fonte da classe. .
+    
+    \item \textbf{Métrica 3.1 -- Peso dos Métodos (\textit{WMC-Unweighted}):} Consiste na contagem absoluta (não ponderada) de métodos implementados em uma classe..
+    
+    \item \textbf{Métrica 3.1 -- Resposta para uma Classe (RFC):} Mensura a cardinalidade do conjunto de resposta de uma classe, ou seja, o número total de métodos locais somado ao número de métodos externos diretamente invocados por eles.  \cite{chidamber1994}.
+    
+    \item \textbf{Métrica 3.1 -- Acoplamento entre Objetos (CBO):} Representa a quantidade de classes independentes às quais uma determinada classe está acoplada (seja por atributos, parâmetros de métodos, retornos, herança ou chamadas estáticas).  \cite{chidamber1994}.
+
+\end{itemize}
+
+\section{Fonte de Dados}
+
+Para coletar dados necessários para a posterior avaliação das métricas são necessárias duas fontes de dados. Primeiramente, a ferramenta que será utlizada para aferição de qualidade será utilizada a partir do código-fonte. Outra fonte de dados, o orquestrador de CI/CD atuará como fonte de dados para coleta de testes bem-sucedidos. E por fim, os fiscais técnicos que compõe a comissão de execução do contrato da empresa CAST, será a fonte de dados a partir uma entrevista que será planejada na segunda fase deste projeto, permitindo a análise qualitativa e triangulação dos resultados.
+
+Resalta-se que o acesso ao código fonte foi formalizado por intermédio a solicitão LAI - Lei de acesso a Informação número LAI-011205/2026, dessa forma, o código fonte conterá somente o histório de entregas desde do ínicio de seu desenvolvimento até a data de 27/05/2026. Somente com essa base de dados ele será hospeado em um repositório pessoal e restrito através da plataforma GitHub.
+
+\section{Unidades de Análise e Procedimentos}
+
+Para atender à complexidade das questões de pesquisa deste trabalho, optou-se pelo método de estudo de caso incorporado ou embutido, fundamentado por \citeonline{yin2001estudo}. Esta abordagem foi escolhida, pois permite que o caso principal seja investigado por meio da análise aprofundada de múltiplas subunidades de anaálise, nomeada holísticos. A partir deste é possível construir uma visão detalhada e triangulada que fortalece a validade das conclusões e oferece uma resposta mais completa ao problema investigado.
+
+A unidade de análise primária deste estudo envolve a avaliação quantitativa da manutenibilidade, testabilidade e evolução da Dívida Técnica do \textit{software}. As métricas correspondentes aos modelos SQALE e Q-RAPIDS serão coletadas a partir do histórico de todas as versões do produto (incrementos funcionais) que são integradas na \textit{branch} principal (\textit{main}) do repositório. Dessa forma, será possível monitorar a evolução da qualidade interna do \textit{software} ao longo do tempo, permitindo a identificação de tendências, padrões de degradação arquitetural e o nível de cobertura de testes a cada novo incremento. 
+
+As entregas consolidadas destas versões (representadas pelas \textit{Releases}) foram adotadas como subunidades de análise pois fornecem a granularidade ideal e representam o exato fluxo de valor do contrato ágil. É exatamente sobre o fechamento e a integração dessas versões que ocorre a aferição de produtividade e a homologação técnica e negocial por parte do \textit{Product Owner} do GDF. Sob a ótica da metodologia de Yin \cite{yin2001estudo}, esta definição configura um projeto de estudo de caso único incorporado (\textit{embedded}), no qual o contrato de fábrica de \textit{software} atua como o contexto global (caso único) e as sucessivas entregas integradas na \textit{branch} principal atuam como as múltiplas unidades de análise.
+
+Com outra unidade de análise, serão conduzidas entrevistas com a comissão técnica do contrato. O objetivo dessa etapa qualitativa é triangular a percepção dos gestores com os dados quantitativos de qualidade de código extraídos do produto. Essa abordagem empírica permitirá uma avaliação crítica e abrangente sobre o real nível de qualidade das novas \textit{releases} entregues pela empresa contratada.
+
+\section{Análise de Dados}
+
+A análise dos dados quantitativos será fundamentada em estatísticas descritivas e em análise de tendência longitudinal, visando avaliar a evolução da qualidade interna e estrutural do \textit{software} a cada incremento integrado na \textit{branch} principal. 
+
+Para responder à \textbf{Questão 1}, as métricas relacionadas ao esforço de testabilidade e blindagem do código (Métricas 1.1, 1.2 e 1.3) serão extraídas das ferramentas na esteira de CI/CD para mapear a estabilidade das entregas. Em paralelo, para a \textbf{Questão 2}, o volume global da Dívida Técnica (Métrica 2.1 -- SQI) será monitorado em conjunto com os indicadores de qualidade e código bloqueante do modelo Q-RAPIDS (Métricas 2.2 a 2.5), aferindo a evolução da manutenibilidade da aplicação.
+
+Visando identificar a velocidade de inserção de passivos técnicos, será calculado um indicador de tendência de degradação estrutural focado no SQI. Este indicador consiste na razão entre a média dos índices de dívida (em esforço de remediação) das últimas duas \textit{releases} concluídas e a média das últimas seis \textit{releases}. Nesse cenário, um valor inferior a 1.0 indica uma tendência de melhoria (sinalizando refatoração e abatimento da dívida), um valor entre 1.0 e 1.3 aponta para uma tendência de estabilidade, e um valor superior a 1.3 evidencia uma piora significativa e um acúmulo acelerado de "juros" técnicos.
+
+Para contemplar a \textbf{Questão 3}, as métricas de volume e acoplamento fundamentadas em \citeonline{chidamber1994} (LOC, WMC, RFC e CBO) serão plotadas ao longo do tempo. A observação contínua destes valores permitirá identificar se a exigência por entregas ágeis pelo contrato está gerando classes não coesas, dependências cíclicas e perda de modularidade na arquitetura Java.
+
+Por fim, para corroborar a análise quantitativa extraída estaticamente do código-fonte e garantir a triangulação metodológica dos dados preconizada por \citeonline{yin2001estudo}, será realizada a análise qualitativa das entrevistas conduzidas com a comissão técnica do contrato. O tratamento desses dados se dará por meio de categorização temática das respostas, extraindo a percepção empírica e fiscalizatória dos gestores. O cruzamento dos relatos obtidos nas entrevistas com as oscilações quantitativas da Dívida Técnica viabilizará uma resposta holística sobre o real nível de qualidade entregue pela fábrica de \textit{software}.
+
+\section{Instrumentação}
+
+A instrumentação se refere às ferramentas que serão utilizadas para a realização do estudo de caso. Aqui estão definidas as ferramentas usadas para a análise da qualidade interna do sistema (manutenibilidade e testabilidade), controle da evolução da Dívida Técnica, versionamento do código-fonte, automação da \textit{pipeline} e coleta de dados qualitativos da equipe.
+
+O \textbf{SonarQube}\footnote{\url{https://www.sonarqube.org/}} é uma plataforma \textit{open-source} de inspeção contínua da qualidade do código-fonte \cite{letouzey2012} [1]. Ele realiza análise estática (\textit{white-box}) para detectar \textit{bugs}, \textit{code smells}, duplicações e vulnerabilidades em várias linguagens de programação. Neste estudo, o SonarQube será a ferramenta central responsável por extrair as métricas quantitativas, uma vez que possui suporte nativo para consolidar os índices do modelo SQALE \cite{letouzey2012} [2] (como o Índice de Dívida Técnica) e fornecerá os dados brutos de complexidade e regras bloqueantes exigidos pelo modelo Q-RAPIDS \cite{qrapids2019} [3]. Ele fará parte das ferramentas integradas à \textit{pipeline} de CI/CD para avaliar a qualidade a cada nova \textit{release} entregue.
+
+O \textbf{GitHub Actions}\footnote{\url{https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/}} é uma ferramenta integrada ao repositório GitLab que permite a automação das etapas do ciclo de vida do \textit{software}. Através dele, a execução da suíte de testes automatizados e a análise estática do SonarQube serão disparadas automaticamente. Ele servirá para atestar a densidade de testes bem-sucedidos \cite{qrapids2019} [4] e poderá atuar como mecanismo de bloqueio do \textit{build/deploy} caso os portões de qualidade (\textit{Quality Gates}) ou regras críticas não sejam atendidos.
+
+O \textbf{Git}\footnote{\url{https://git-scm.com/}} é um sistema de controle de versão distribuído, e o \textbf{GitHub} atua como a plataforma de hospedagem de código-fonte. Eles serão utilizados para o versionamento e armazenamento dos artefatos do projeto. O histórico dessas ferramentas fornecerá a granularidade exata das entregas promovidas na \textit{branch} principal (\textit{main}), permitindo isolar o código de cada \textit{sprint} para a extração das métricas.
+
+
+\section{Ameaças à Validade do Estudo}
+
+Há quatro preocupações centrais para avaliar a qualidade dos resultados obtidos em uma pesquisa. São conhecidas como testes às ameaças: de constructo; interna; externa e de confiabilidade. Ao conduzir estudos de caso, podemos aplicar diversas estratégias para atender a esses testes. Contudo, nem todas essas estratégias são usadas apenas na fase de planejamento formal. Algumas delas são aplicadas durante a coleta e análise dos dados, ou mesmo nas etapas de estruturação da pesquisa. \cite{yin2001estudo}
+
+\subsection{Validade do Contructo}
+
+Diz respeito à capacidade do pesquisador de interpretar as alterações e variações observadas na execução do estudo de caso de forma a garantir fidedignamente a representação da realidade \cite{yin2001estudo}. Em outras palavras, o pesquisador precisa garantir que os eventos observados \textit{in loco} realmente refletem o fenômeno de forma inequívoca, definindo medidas operacionais corretas para os conceitos sob estudo. Dessa maneira, as medidas puramente empíricas poderiam não capturar completamente os aspectos de qualidade interna que se pretende avaliar. Para mitigar essa ameaça, foram selecionadas métricas rigorosas baseadas em modelos e normas de referência na literatura, como a ISO/IEC 25010, o modelo SQALE para a quantificação da Dívida Técnica \cite{letouzey2010} e o modelo Q-RAPIDS para a aferição da testabilidade e modularidade \cite{qrapids2019}. Além disso, para garantir esse alinhamento, foi adotada a abordagem GQM (\textit{Goal, Question, Metric}) \cite{basili1994}. Com isso, a questão de pesquisa principal e as questões específicas possuem suas respectivas métricas previamente validadas na literatura, auxiliando a quantificar e qualificar as percepções da qualidade de forma objetiva por meio dos dados coletados. Por fim, o uso de múltiplas fontes de evidência (ferramentas de análise estática e questionários) promove a triangulação dos dados, reforçando a robustez deste constructo.
+
+\subsection{Validade Interna}
+
+As ameaças a validade interna tratam das relações de causalidade. Portanto, analisa a relação de causa e efeito entre as variáveis observadas.Por se tratar de um estudo do tipo exploratório, que procura observar e compreender um fenômeno especíﬁco, ocorrendo em seu ambiente real, o foco é a perpeção de todo o contexto. Por isso, esse teste não se aplica a esta pesquisa.
+
+\subsection{Validade Externa}
+
+Trata do domínio sob o qual as descobertas do estudo podem ser generalizadas para outros contextos. Por se tratar de um estudo de caso único e incorporado \cite{yin2001estudo}, delimitado ao contrato de fábrica de \textit{software} do Governo do Distrito Federal (GDF) com a CAST Informática, a generalização estatística direta para outros órgãos da Administração Pública é limitada. No entanto, o estudo busca alcançar a chamada "generalização analítica" \cite{yin2001estudo}, na qual os resultados empíricos encontrados nas entregas ágeis do contrato são comparados e validados contra as teorias prévias de engenharia de \textit{software} e qualidade de produto.
+
+\subsection{Confiabilidade}
+
+Diz respeito a demonstrar que os procedimentos e as operações de coleta de dados do estudo podem ser repetidos por outros pesquisadores (como auditores), alcançando os mesmos resultados. Essa ameaça foi fortemente mitigada pela adoção de ferramentas de instrumentação automatizadas (\textit{GitHub CI/CD} e \textit{SonarQube}). Uma vez que a extração de métricas de código-fonte ocorre de forma mecânica e parametrizada pela esteira \textit{DevOps}, os erros manuais de contagem são eliminados. Adicionalmente, a elaboração prévia de um protocolo de estudo de caso e a manutenção de um banco de dados contendo o histórico do código, dos relatórios gerados e das respostas dos questionários asseguram a rastreabilidade e o encadeamento formal das evidências metodológicas \cite{yin2001estudo}.
