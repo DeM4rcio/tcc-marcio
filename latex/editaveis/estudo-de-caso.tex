@@ -43,7 +43,8 @@ No que tange à qualidade externa e à confiabilidade do produto entregue, o con
 
 Para assegurar a manutenção da qualidade interna ao longo do tempo e evitar a degradação da arquitetura sistêmica (como o acúmulo de Dívida Técnica), o contrato estabelece que a Contratante possui o dever de monitorar continuamente o nível de qualidade dos serviços. Caso seja verificado um viés contínuo de desconformidade da prestação do serviço em relação à qualidade exigida, o órgão tem a prerrogativa de intervir, exigir correções tempestivas ou aplicar sanções. 
 
-Este estudo de caso, concentra-se na etapa de aceitação de release, como neste caso não tem nenhum controle de qualidade da perspectiva de código, uma ferramenta será utilizada para aferição de qualidade desde do nível de métrica até a nível de característica (indicador). A análise será puramente estático, utilizando o código fonte como fonte de dados.
+Este estudo de caso concentra-se na etapa de aceitação de \textit{releases} no escopo de um contrato de desenvolvimento ágil. Considerando a atual ausência de um controle de qualidade automatizado e objetivo sob a perspectiva do código-fonte por parte do órgão contratante, será adotada uma abordagem baseada em análise estática. Para suprir essa lacuna e permitir uma avaliação rigorosa --- mapeando desde a extração das métricas brutas até a consolidação em características de alto nível ---, a aferição da qualidade será estruturada sob os preceitos matemáticos do modelo MeasureSoftGram \cite{neri2018}.
+
 
 \subsection{Estudos Relacionados}
 
@@ -59,6 +60,11 @@ O SQALE estrutura-se por meio de um Modelo de Qualidade e um Modelo de Análise.
 
 A soma desses Índices de Remediação consolida o \textit{SQALE Quality Index} (SQI), que representa o montante total da \textbf{Dívida Técnica} do software \cite{letouzey2010}. No contexto de contratações públicas baseadas em pontos de função e variabilidade ágil, a mensuração contínua deste índice é vital. Ela impede que a entrega rápida de \textit{sprints} (gerando funcionalidades aparentemente operantes) mascare um acúmulo insustentável de "juros" arquiteturais que, a longo prazo, inviabilizariam a sustentação e evolução do sistema pela Administração Pública \cite{letouzey2010}.
 
+Por fim, destaca-se o modelo MeasureSoftGram \cite{neri2018, neri2020}, concebido especificamente para o monitoramento da qualidade em ambientes de engenharia de \textit{software} contínua (CI/CD). Diferenciando-se metodologicamente das abordagens clássicas que avaliam a qualidade de forma isolada e unidimensional, este modelo utiliza os fundamentos da álgebra multilinear e o cálculo vetorial (operações com tensores) para observar o produto de \textit{software} em um espaço multidimensional \cite{neri2020}. 
+
+Um dos seus principais diferenciais reside no suporte analítico ao planejamento de \textit{releases}, lidando explicitamente com as discrepâncias e os conflitos inerentes (\textit{trade-offs}) entre os atributos de qualidade propostos pela norma ISO/IEC 25010 \cite{neri2018}. Por meio de uma matriz de balanceamento denominada \textit{Quality Equalizer}, o modelo reconhece a realidade empírica de que é improvável maximizar todas as características de qualidade simultaneamente --- mitigando, por exemplo, o impacto negativo mútuo que exigências de alta segurança podem causar na usabilidade ou performance do sistema \cite{neri2018, neri2020}. 
+
+Ademais, a operacionalização matemática do MeasureSoftGram destaca-se por três frentes: primeiramente, aplica funções de interpretação baseadas em interpolação linear para padronizar métricas estáticas heterogêneas do código-fonte; em seguida, agrega a configuração global da qualidade da \textit{release} ($SQC_i$) através da aplicação da Norma de Frobenius no espaço $\mathbb{R}^N$; e, por fim, viabiliza o acompanhamento evolutivo da degradação ou melhoria arquitetural ao comparar as diferentes \textit{releases} por meio da medida de similaridade por cosseno entre os vetores de qualidade resultantes \cite{neri2020}. Tais características o tornam um instrumento robusto para subsidiar a tomada de decisão objetiva no aceite de entregas de \textit{software}.
 
 
 \section{Pergunta Pesquisa}
@@ -69,7 +75,7 @@ A norma ISO/IEC 25010 define a manutenibilidade como o grau em que um produto de
 
 
 \vspace{0.5cm}
-\noindent \textbf{Questão Específica 1: Qual é o nível de vulnerabilidade do \textit{software} entregue no que tange à falta de cobertura de testes e à testabilidade do código ao longo do tempo?}
+\noindent \textbf{Questão Específica 1: Qual é o nível de Confiabilidade do \textit{software} entregue no que tange à falta de cobertura de testes e à testabilidade do código ao longo do tempo?}
 
 \begin{itemize}
     \item \textbf{Métrica 1.1 -- \textit{Passed tests}:} Razão entre os testes unitários que executaram com sucesso (sem erros, falhas ou interrupções) e o total de testes executados na \textit{release}. Esta métrica indica o nível de estabilidade e adequação funcional da entrega.
@@ -77,10 +83,12 @@ A norma ISO/IEC 25010 define a manutenibilidade como o grau em que um produto de
     \item \textbf{Métrica 1.2 -- \textit{Fast test builds}:} Proporção de testes (ou \textit{builds} de teste) cuja duração de execução encontra-se abaixo do limiar de tempo máximo aceitável. Em um ambiente de desenvolvimento ágil, testes rápidos são indispensáveis para garantir que a equipe receba \textit{feedback} imediato da esteira de integração contínua (CI) sem gerar gargalos de produtividade.
     
     \item \textbf{Métrica 1.3 -- \textit{Test coverage}:} Proporção quantitativa de linhas de código e de caminhos lógicos (condições) que são efetivamente exercitados pela execução da suíte de testes automatizados, demonstrando o nível de blindagem do \textit{software} contra defeitos de regressão.
+    
+    \item \textbf{Métrica 1.4 -- \textit{CI Feedback time}:} Tempo médio de \textit{feedback} proveniente do sistema de Integração Contínua (CI). É calculada pela razão entre o tempo de duração de cada \textit{build} e o número total de \textit{builds} executados na \textit{sprint} ou \textit{release}. 
 \end{itemize}
 
 \vspace{0.5cm}
-\noindent \textbf{Questão Específica 2: Qual é a disparidade da Dívida Técnica acumulada e o nível de manutenibilidade ao longo das entregas (\textit{releases})?}
+\noindent \textbf{Questão Específica 2: Qual é a disparidade nível de manutenibilidade ao longo das entregas (\textit{releases})?}
 \begin{itemize}
     \item \textbf{Métrica 2.1:} O SQI representa o montante total e global da Dívida Técnica da \textit{release} \cite{letouzey2010}. A evolução deste índice em paralelo com o SMI indicará a disparidade do acúmulo de juros técnicos associados especificamente a defeitos de legibilidade, estrutura, acoplamento e duplicação de código.
     
@@ -94,21 +102,6 @@ A norma ISO/IEC 25010 define a manutenibilidade como o grau em que um produto de
 
 \end{itemize}
 
-\vspace{0.5cm}
-\noindent \textbf{Questão Específica 3: Qual é o nível de modularidade e o impacto da complexidade arquitetural no código-fonte Java ao longo das entregas?}
-
-Para avaliar especificamente a arquitetura e a modularidade da aplicação, serão adotadas as métricas de estrutura consolidadas pela ferramenta \textit{CBR Insight} \cite{ludwig2019}, cujos fundamentos teóricos se baseiam na literatura clássica de engenharia de software:
-
-\begin{itemize}
-    \item \textbf{Métrica 3.1 -- Linhas de Código (LOC):} Métrica fundamental de volume que quantifica o tamanho físico do código-fonte da classe. .
-    
-    \item \textbf{Métrica 3.1 -- Peso dos Métodos (\textit{WMC-Unweighted}):} Consiste na contagem absoluta (não ponderada) de métodos implementados em uma classe..
-    
-    \item \textbf{Métrica 3.1 -- Resposta para uma Classe (RFC):} Mensura a cardinalidade do conjunto de resposta de uma classe, ou seja, o número total de métodos locais somado ao número de métodos externos diretamente invocados por eles.  \cite{chidamber1994}.
-    
-    \item \textbf{Métrica 3.1 -- Acoplamento entre Objetos (CBO):} Representa a quantidade de classes independentes às quais uma determinada classe está acoplada (seja por atributos, parâmetros de métodos, retornos, herança ou chamadas estáticas).  \cite{chidamber1994}.
-
-\end{itemize}
 
 \section{Fonte de Dados}
 
@@ -148,6 +141,7 @@ O \textbf{GitHub Actions}\footnote{\url{https://about.gitlab.com/stages-devops-l
 
 O \textbf{Git}\footnote{\url{https://git-scm.com/}} é um sistema de controle de versão distribuído, e o \textbf{GitHub} atua como a plataforma de hospedagem de código-fonte. Eles serão utilizados para o versionamento e armazenamento dos artefatos do projeto. O histórico dessas ferramentas fornecerá a granularidade exata das entregas promovidas na \textit{branch} principal (\textit{main}), permitindo isolar o código de cada \textit{sprint} para a extração das métricas.
 
+O \textbf{MeasureSoftGram (MSGRAM)}\footnote{\url{https://msgram.lappis.rocks/auth/}} é uma plataforma Software livre de \textit{Software Analytics} que emprega álgebra multilinear para o monitoramento contínuo e multidimensional da qualidade do produto de \textit{software} \cite{neri2018}. Ele será utilizado como o mecanismo analítico central para a padronização, ponderação e avaliação quantitativa das métricas do projeto. A execução dessa ferramenta fornecerá a consolidação exata das métricas extraídas a cada \textit{sprint} promovida na \textit{branch} principal (\textit{main}), permitindo transformar os dados brutos oriundos da análise estática em tensores e indicadores de qualidade globais para subsidiar o ateste técnico e a aceitação de cada entrega.
 
 \section{Ameaças à Validade do Estudo}
 
@@ -168,3 +162,18 @@ Trata do domínio sob o qual as descobertas do estudo podem ser generalizadas pa
 \subsection{Confiabilidade}
 
 Diz respeito a demonstrar que os procedimentos e as operações de coleta de dados do estudo podem ser repetidos por outros pesquisadores (como auditores), alcançando os mesmos resultados. Essa ameaça foi fortemente mitigada pela adoção de ferramentas de instrumentação automatizadas (\textit{GitHub CI/CD} e \textit{SonarQube}). Uma vez que a extração de métricas de código-fonte ocorre de forma mecânica e parametrizada pela esteira \textit{DevOps}, os erros manuais de contagem são eliminados. Adicionalmente, a elaboração prévia de um protocolo de estudo de caso e a manutenção de um banco de dados contendo o histórico do código, dos relatórios gerados e das respostas dos questionários asseguram a rastreabilidade e o encadeamento formal das evidências metodológicas \cite{yin2001estudo}.
+
+\section*{Declaração de Uso de Inteligência Artificial Generativa}
+\addcontentsline{toc}{section}{Declaração de Uso de Inteligência Artificial Generativa}
+
+Em atendimento à Portaria CNPq nº 2.664/2026, o autor declara o uso das seguintes ferramentas de Inteligência Artificial Generativa na elaboração deste capítulo:
+
+\begin{enumerate}
+    \item \textbf{Ferramenta:} Claude Sonnet 4.5 \\
+    \textbf{Empresa desenvolvedora:} Anthropic \\
+    \textbf{Versão/período de uso:} junho de 2026 \\
+    \textbf{Finalidade:} melhoria e aprimoramento de rascunhos previamente elaborados pelo autor \\
+    \textbf{Parte do trabalho aplicada:} seção "Ameaças à Validade do Estudo" (subseções Validade do Constructo, Validade Interna, Validade Externa e Confiabilidade)
+\end{enumerate}
+
+O autor declara estar ciente do uso da ferramenta de Inteligência Artificial Generativa acima descrita e assume integral responsabilidade pelo conteúdo, pela veracidade das informações e pelas conclusões apresentadas neste capítulo, tendo revisado criticamente todo o material gerado ou auxiliado por tal ferramenta.
