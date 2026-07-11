@@ -20,7 +20,7 @@ Dessa forma, o objetivo deste estudo consiste em caracterizar a qualidade do pro
 
 \section{Caso}
 
-O caso em estudo neste trabalho é a plataforma Agenda DF. Trata-se de uma plataforma digital que disponibiliza para os cidadãos do Distrito Federal diversos tipos de agendamentos de serviços oferecidos pelo GDF, entre eles: agendamento de doação de sangue e medula óssea, agendamento aos serviços do Na Hora (BRB Mobilidade, Procon, Receita Federal), entre outros serviços. O portal efetivou no primeiro trimestre de 2026 somente pelo canal 156, cerca de 46.913 agendamentos, cobrindo todas as Regiões administrativas do Distrito Federal.
+O caso em estudo neste trabalho é a plataforma Agenda DF. Trata-se de uma plataforma digital que disponibiliza para os cidadãos do Distrito Federal diversos tipos de agendamentos de serviços oferecidos pelo Governo do Distrito Federal (GDF), entre eles: agendamento de doação de sangue e medula óssea, agendamento aos serviços do Na Hora (BRB Mobilidade, Procon, Receita Federal), entre outros serviços. O portal efetivou no primeiro trimestre de 2026 somente pelo canal 156, cerca de 46.913 agendamentos, cobrindo todas as Regiões administrativas do Distrito Federal.
 
 
 O fluxo de desenvolvimento e entrega estabelecido no âmbito do contrato firmado entre a Secretaria de Estado de Economia do Distrito Federal (SEEC-DF) e a empresa CAST Informática S/A baseia-se na implementação de uma fábrica de desenvolvimento operada sob o paradigma de metodologias ágeis. O modelo contratual adota diretrizes modernas de governança e ciclo de vida de desenvolvimento de \textit{software}, com faturamento condicionado a entregas iterativas e produtividade atestada, conforme visto na Figura \ref{fluxo-release}.
@@ -166,11 +166,19 @@ Além disso, para garantir esse alinhamento, foi adotada a abordagem GQM (\texti
 
 \subsection{Validade Interna}
 
-As ameaças a validade interna tratam das relações de causalidade. Portanto, analisa a relação de causa e efeito entre as variáveis observadas. Por se tratar de um estudo do tipo exploratório, que procura observar e compreender um fenômeno específico, ocorrendo em seu ambiente real, o foco é a percepção de todo o contexto. Por isso, esse teste não se aplica a esta pesquisa.
+
+As ameaças à validade interna dizem respeito às relações de causa e efeito estabelecidas entre as variáveis observadas, sendo especialmente relevantes em desenhos de pesquisa explicativos ou causais \cite{Runeson_Host}.
+
+Este estudo, contudo, não formula nem testa hipóteses causais entre variáveis independentes e dependentes: a análise longitudinal das métricas de manutenibilidade e testabilidade ao longo das \textit{releases} tem caráter descritivo e comparativo. O  propósito é documentar a evolução dos indicadores sem atribuir suas variações a fatores isolados específicos. 
+
+Da mesma forma, a triangulação com os dados qualitativos obtidos por meio das entrevistas tem como objetivo enriquecer a interpretação do fenômeno observado, e não estabelecer relações causais entre as práticas adotadas pela empresa de desenvolvimento de de \textit{software} contratada  e os níveis de qualidade mensurados. 
+
+Por se tratar de um estudo de caso de natureza exploratória e observacional, conduzido em ambiente real e sem controle experimental sobre as variáveis envolvidas, o foco recai sobre a compreensão contextualizada do fenômeno, e não sobre o isolamento de relações de causalidade.s Por esse motivo, embora reconhecida na literatura metodológica, essa ameaça não se configura como um risco relevante para os objetivos deste estudo.
+
 
 \subsection{Validade Externa}
 
-Trata do domínio sob o qual as descobertas do estudo podem ser generalizadas para outros contextos. Por se tratar de um estudo de caso único e incorporado \cite{yin2001estudo}, delimitado ao contrato de fábrica de \textit{software} do Governo do Distrito Federal (GDF) com a CAST Informática, a generalização estatística direta para outros órgãos da Administração Pública é limitada. No entanto, o estudo busca alcançar a chamada "generalização analítica" \cite{yin2001estudo}, na qual os resultados empíricos encontrados nas entregas ágeis do contrato são comparados e validados contra as teorias prévias de engenharia de \textit{software} e qualidade de produto.
+Trata do domínio sob o qual as descobertas do estudo podem ser generalizadas para outros contextos. Por se tratar de um estudo de caso único e incorporado \cite{yin2001estudo}, delimitado ao contrato de fábrica de \textit{software} do  GDF com a CAST Informática, a generalização estatística direta para outros órgãos da Administração Pública é limitada. No entanto, o estudo busca alcançar a chamada "generalização analítica" \cite{yin2001estudo}, na qual os resultados empíricos encontrados nas entregas ágeis do contrato são comparados e validados contra as teorias prévias de engenharia de \textit{software} e qualidade de produto.
 
 
 \subsection{Confiabilidade}
@@ -195,7 +203,7 @@ Ainda assim, essas medidas não eliminam integralmente a ameaça. As decisões h
 
 \section{Declaração de Uso de Inteligência Artificial Generativa}
 
-Em atendimento à Portaria CNPq nº 2.664/2026, o autor declara o uso das seguintes ferramentas de Inteligência Artificial Generativa na elaboração deste capítulo:
+Em atendimento à Portaria CNPq n\textordmasculine\ 2.664/2026, o autor declara o uso das seguintes ferramentas de Inteligência Artificial Generativa na elaboração deste capítulo:
 
 \begin{enumerate}
     \item \textbf{Ferramenta:} Claude Sonnet 4.5 \\
