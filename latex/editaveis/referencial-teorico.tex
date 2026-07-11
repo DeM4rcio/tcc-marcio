@@ -120,12 +120,15 @@ Ademais, a operacionalização matemática do MeasureSoftGram destaca-se por dua
 O outro diferencial do MeasureSoftGram é utilizar esses valores agregados para calcular discrepâncias de qualidade sob a perspectiva da \textit{release}. Definido os requisitos planejados de qualidade desejados, os valores efetivamente obtidos após a execução do desenvolvimento da \textit{release} são comparados a essa meta pelas funções \texttt{norm\_diff} e \texttt{diff}. A primeira retorna uma medida escalar da distância global entre o planejado e o entregue, enquanto a segunda decompõe essa diferença por dimensão, evidenciando em quais aspectos e em que magnitude a entrega ficou aquém do planejado. \cite{neri2020,neri2018}
 
 \subsection{Modelo Q-Rapids}
+\label{sec:qrapids}
 
 Na busca de automatizar a medição de qualidade e apoiar a tomada de decisão ágil, destaca-se o modelo Q-Rapids. Trata-se de um modelo de qualidade e uma ferramenta de \textit{software analytics} desenvolvida sob o consórcio do programa de pesquisa e inovação \textit{Horizon 2020} da União Europeia \cite{qrapids2019}.
 
 O Q-Rapids propõe a avaliação contínua da qualidade do software por meio da coleta de dados brutos provenientes de ferramentas de uso contínuo no ciclo de desenvolvimento, como \textit{SonarQube}, \textit{Jira} e \textit{Jenkins}. O modelo é estruturado de forma hierárquica em Indicadores Estratégicos e Fatores de Processo e Produto \cite{qrapids2019}.
 
 Dentre os Indicadores Estratégicos propostos pelo modelo, destacam-se a "Qualidade do Produto" (\textit{Product Quality}) e o "Bloqueio" (\textit{Blocking}). O modelo Q-Rapids estabelece que a "Qualidade do Código" é um fator de produto aferido a partir de métricas como Complexidade Ciclomática, Comentários e Duplicação, extraídas do \textit{SonarQube} e subsequentemente interpretadas \cite{qrapids2019}. Além disso, introduz o conceito prático de "Código Bloqueante" (\textit{Blocking code}), que mede a Dívida Técnica do código de software em termos de violações de regras de qualidade, gerando ações imediatas, como a exigência de refatoração para violações críticas ou bloqueantes \cite{qrapids2019}.
+
+Observa-se que as medidas de testabilidade e modularidade operacionalizadas pelo Q-Rapids, descritas acima, são as mesmas consumidas pelo MeasureSoftGram (Seção~\ref{sec:msgram}) em sua etapa de normalização, ambas extraídas da mesma base de dados brutos do SonarQube e do GitHub Actions. Os dois modelos divergem, portanto, não na definição das medidas de entrada, mas nos mecanismos de agregação e ponderação aplicados a elas: enquanto o Q-Rapids consolida os Fatores de Processo e Produto em Indicadores Estratégicos por meio de regras e limiares definidos por especialistas \cite{qrapids2019}, o MeasureSoftGram aplica as transformações tensoriais no espaço $\mathbb{R}^n$ descritas na Seção~\ref{sec:msgram} para obter o TSQMI. Essa relação entre os dois modelos é retomada na discussão sobre validade do constructo do estudo de caso (Seção~\ref{sec:validade_constructo}).
 
 \subsection{Modelo SQALE}
 
