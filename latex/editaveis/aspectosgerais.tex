@@ -6,29 +6,34 @@
 
 
 
-A evolução da engenharia de software trouxe à tona debates fundamentais sobre qualidade dos produtos desenvolvidos. Essa discussão tem início em meados dos anos 70 com a criação do primeiro modelo de qualidade conhecido Modelo McCall\cite{mccall1977factors}. Posteriormente, o modelo proposto por \citeonline{boehm1978characteristics}  expandiu essa visão, categorizando os fatores de qualidade em diferentes níveis de abstração: Os fatores de alto nível, como, utilidade (perspectiva de qualidade em uso), Manutenibilidade (perspectiva em qualidade do produto), e portabilidade (perspectiva de adaptação do software para diferentes mudanças). Sendo esses os modelos pilares para consolidação dos modelos subsequentes FURPS e Dromey, culminando, em 2001, a publicação da primeira norma sobre qualidade de software /IEC 9126. O avanço tecnológico e a globalização impulsionaram revisões contínuas desses padrões, resultando na atual normal /IEC 25010, que estabelece os parâmetros contemporâneos para a avaliação de qualidade de software.\cite{miguel2014review}
+A evolução da engenharia de software trouxe à tona debates fundamentais sobre qualidade dos produtos desenvolvidos. Essa discussão tem início em meados dos anos 70 com a criação do primeiro modelo de qualidade conhecido como Modelo McCall\cite{mccall1977factors}. Posteriormente, o modelo proposto por \citeonline{boehm1978characteristics} expandiu essa visão, categorizando os fatores de qualidade em diferentes níveis de abstração: os fatores de alto nível, como utilidade (perspectiva de qualidade em uso), Manutenibilidade (perspectiva em qualidade do produto) e portabilidade (perspectiva de adaptação do software para diferentes mudanças). Sendo esses os modelos pilares para a consolidação dos modelos subsequentes FURPS e Dromey, culminando, em 2001, com a publicação da primeira norma sobre qualidade de software ISO/IEC 9126. O avanço tecnológico e a globalização impulsionaram revisões contínuas desses padrões, resultando na atual norma ISO/IEC 25010, que estabelece os parâmetros contemporâneos para a avaliação de qualidade de software.\cite{miguel2014review}
 
-Embora a ISO/IEC 25010 forneça a fundamentação teórico fundamental para a qualidade, modelos operacionais subsequentes precisaram ser desenvolvidos para suprir a lacuna da extração contínua e automatizada de métricas. Conforme mapeado pela literatura, destacam-se como evolução metodológica modelos como o Quamoco (2012) e o QATCH (2017). Mostram que mesmo após a reformulação da nova ISO/IEC 25010, a tendência é trazer novos modelos ou formas de interpretações de métricas e medidas de qualidade até um definição clara da qualidade de um software.
+Embora a ISO/IEC 25010 forneça a fundamentação teórica para a observação da qualidade do produto de software, os modelos subsequentes precisaram ser desenvolvidos para suprir a lacuna da falta de operacionalização e de uma definição clara de como calcular as medidas, como normalizá-las e ponderá-las, como agregá-las e calcular os indicadores de qualidade. Conforme reportado na literatura, os modelos mais recentemente propostos, como o SQALE\cite{letouzey2010}, Quamoco\cite{wagner2012quamoco}, QATCH (2017)\cite{siavvas2017qatch}, Q-Rapids\cite{qrapids2019} e o MeasureSoftGram\cite{neri2020}, mostram que mesmo após a reformulação da norma ISO/IEC 25010, a tendência é trazer novos modelos ou formas de interpretação de métricas e medidas de qualidade até uma definição clara da qualidade de um software.
 
-No contexto de produtos de software direcionados ao cidadão, a garantia de qualidade torna-se um critério crítico. No setor público, a estratégia de terceirização de desenvolvimento é amplamente adotada como meio de otimizar custos e trasnferir a carga de operacionalização técnica para a iniciativa privada. O arcabouço legal primário que rege essas contratações no Brasil é a Nova lei de Licitações e Contratos \cite{brasil2021lei}. Contudo, a delegação de desenvolvimento não isenta a Administração Pública da responsabilidade sobre o resultado. Quando os requisitos de qualidade não são rigorosamente antedidos, o impacto recai de forma direta e imediata sobre o usuário final, comprometendo a prestação do serviço público digital.
+A evolução da engenharia de software trouxe à tona debates fundamentais sobre qualidade dos produtos desenvolvidos. Essa discussão tem início em meados dos anos 70 com a criação do primeiro modelo de qualidade conhecido como Modelo McCall \cite{mccall1977factors}. Posteriormente, o modelo proposto por \citeonline{boehm1978characteristics} expandiu essa visão, categorizando os fatores de qualidade em diferentes níveis de abstração: os fatores de alto nível, como utilidade (perspectiva de qualidade em uso), Manutenibilidade (perspectiva em qualidade do produto) e portabilidade (perspectiva de adaptação do software para diferentes mudanças). Esses são os modelos seminais que influenciaram os modelos subsequentes, como por exemplo os modelos FURPS \cite{grady1987software} e Dromey \cite{dromey1995model}, culminando, em 2001, na publicação da primeira norma sobre qualidade de software ISO/IEC 9126 \cite{ISO9126}. O avanço tecnológico e a globalização impulsionaram revisões contínuas desses padrões, resultando na atual norma ISO/IEC 25010 \cite{iso25010}. Embora a ISO/IEC 25010 forneça uma fundamentação teórica para a observação da qualidade do produto de software, ela não define um mecanismo de operacionalização de medidas, indicadores e conceitos teóricos.
 
-Para orientar e padronizar essas contratações, a Secretaria de Governo Digital (SGD) estabeleceu por meio da Portaria número 750 \cite{brasil2023portaria750} - a qual será aprofundada no Capítulo 2. Embora o modelo tente trazer com maior frequência um cálculo adequado para a qualidade código entregue pela contratada \cite[cap. 12]{brasil2023portaria750}, ela ainda se mostra insuficiente para garantir a completude da qualidade de um produto de software, e deixa em aberto para quais modelos de qualidade e a forma como o mesmo será aferido \cite[cap. 2]{brasil2023portaria750}.
+Os modelos publicados aproximadamente entre os anos de 2009 e 2015 endereçaram esse problema da falta de operacionalização e definiram mecanismos para calcular as medidas, normalizar, ponderar e agregá-las em indicadores de qualidade, como por exemplo o SQALE \cite{letouzey2010} e o Quamoco \cite{wagner2012quamoco}. Conforme reportado na literatura, os modelos mais recentemente propostos, como o QATCH \cite{siavvas2017qatch}, o Q-Rapids \cite{qrapids2019} e o MeasureSoftGram \cite{neri2020}, propuseram investigar a qualidade de forma mais holística, não restringindo a observação somente a medidas relacionadas ao código-fonte.
 
-Consequentemente, a aplicação rigorosa de modelos de qualidade em contratos de terceirização permanece na dificuldade de estabelecer métricas estritamente objetivas. Essa lacuna operacional e contratual reconduz o setor público aos desafios já debatidos na literatura cientifica: a necessidade de definir métodos inequívocos e auditáveis para mensurar a qualidade de software entregue por terceiros.
+
+No contexto de produtos de software direcionados ao cidadão, a garantia de qualidade torna-se um critério crítico. No setor público, a estratégia de terceirização de desenvolvimento é amplamente adotada como meio de otimizar custos e transferir a carga de operacionalização técnica para a iniciativa privada. O arcabouço legal primário que rege essas contratações no Brasil é a Nova Lei de Licitações e Contratos \cite{brasil2021lei}. Contudo, a delegação de desenvolvimento não isenta a Administração Pública da responsabilidade sobre o resultado. Quando os requisitos de qualidade não são rigorosamente atendidos, o impacto recai de forma direta e imediata sobre o usuário final, comprometendo a prestação do serviço público digital.
+
+Para orientar e padronizar essas contratações, a Secretaria de Governo Digital (SGD) estabeleceu, por meio da Portaria número 750 \cite{brasil2023portaria750}, a qual será aprofundada no Capítulo 2. Embora o modelo tente trazer com maior frequência um cálculo adequado para a qualidade do código entregue pela contratada \cite[cap. 12]{brasil2023portaria750}, ele ainda se mostra insuficiente para garantir a completude da qualidade de um produto de software, e deixa em aberto quais modelos de qualidade serão adotados e a forma como serão aferidos \cite[cap. 2]{brasil2023portaria750}.
+
+Consequentemente, a aplicação rigorosa de modelos de qualidade em contratos de terceirização permanece prejudicada pela dificuldade de estabelecer métricas estritamente objetivas. Essa lacuna operacional e contratual reconduz o setor público aos desafios já debatidos na literatura científica: a necessidade de definir métodos inequívocos e auditáveis para mensurar a qualidade de software entregue por terceiros.
 
 
 \section{Problema}
 
-Aproximadamente entre os anos de 2010 à 2015, as pesquisas em qualidade de software procuraram responder uma lacuna até então em aberto, no que diz respeito à falta de operacionalização dos abstratos conceitos teóricos definidos nos modelos de qualidade de referência \cite{wagner2012quamoco}.Entretanto, devido a diversidade de modelos propostos e também a não completude dos mesmos, gera insegurança para aderência institucional. \citeonline{gorski2006evaluation}, afirma que as decisões de uma contratação e indicadores devem ser menos subjetivos possíveis.
+Aproximadamente entre os anos de 2010 e 2015, as pesquisas em qualidade de software procuraram responder a uma lacuna até então em aberto no que diz respeito à falta de operacionalização dos conceitos teóricos abstratos definidos nos modelos de qualidade de referência \cite{wagner2012quamoco}. Entretanto, a diversidade de modelos propostos e a não completude dos mesmos geram insegurança para a aderência institucional. \citeonline{gorski2006evaluation} afirma que as decisões de contratação e os indicadores devem ser os menos subjetivos possíveis.
 
-Diante do alto nível de abstração conceitual dos modelos de qualidade de referência como a ISO/IEC 25010 \cite{iso25000public} e de outros modelos presentes na literatura, o modelo de contratação da SGD delega a operacionalização e definição de medidas e indicadores para o gestor do contrato. Conforme descrito em sua Seção 5.1.6, a definição da metodologia para a aferição da qualidade do produto de software foca sob a responsabilidade da própria contratante. O mesmo prevê como alternativa a contratação de outra empresa para aderência de qualidade. O reflexo disso está no cálculo de indicadores sobre qualidade de código que caracteriza os requisitos de qualidade por parte da contratante.
- 
+Diante do alto nível de abstração conceitual dos modelos de qualidade de referência, como a ISO/IEC 25010 \cite{iso25000public} e outros modelos presentes na literatura, o modelo de contratação da SGD delega a operacionalização e a definição de medidas e indicadores ao gestor do contrato. Conforme descrito em sua Seção 5.1.6, a definição da metodologia para a aferição da qualidade do produto de software fica sob a responsabilidade da própria contratante. O mesmo prevê como alternativa a contratação de outra empresa para aderência de qualidade. O reflexo disso está no cálculo de indicadores sobre qualidade de código que caracteriza os requisitos de qualidade por parte da contratante.
+
 \section{Questão de Pesquisa}
 
-A definição da questão de pesquisa foi elaborada utilizando a abordagem \textit{Goal Question Metric (GQM)}. Essa tem como objetivo definir de forma hierárquica, os objetivos a serem alcançados, as perguntas a serem respondidas para cumprir tais objetivos e as métricas necessárias para responder a cada pergunta de forma quantitativa. Considerando essa perspectiva definimos a seguinte questão principal de pesquisa deste estudo:
+A definição da questão de pesquisa foi elaborada utilizando a abordagem \textit{Goal Question Metric (GQM)}, que tem como objetivo definir de forma hierárquica os objetivos a serem alcançados, as perguntas a serem respondidas para cumprir tais objetivos e as métricas necessárias para respondê-las de forma quantitativa. Considerando essa perspectiva, define-se a seguinte questão principal de pesquisa deste estudo:
 
 \begin{center}
-	\textbf{Como operacionalizar os atributos de qualidade de Manutenibilidade, especialmente Analisabilidade e Testabilidade, por meio de indicadores objetivos, para apoiar a aceitação de versões de produtos de software desenvolvidos por terceiros no contexto da fiscalização de contratos públicos de desenvolvimento de software?}	
+	\textbf{Como operacionalizar os atributos de qualidade de Manutenibilidade, especialmente Analisabilidade e Testabilidade, por meio de indicadores objetivos, para apoiar a aceitação de versões de produtos de software desenvolvidos por terceiros no contexto da fiscalização de contratos públicos de desenvolvimento de software?}
 \end{center}
 
 \begin{table}[!h]
@@ -39,15 +44,15 @@ A definição da questão de pesquisa foi elaborada utilizando a abordagem \text
         \hline
         \textbf{Característica} & \textbf{Valor} \\
         \hline
-        Analisar & Produto de software tercerizado \\
+        Analisar & Produto de software terceirizado \\
 		\hline
-        Com propósito de & Caracterizar a aceitação de versões de produtos de software  \\
+        Com propósito de & Caracterizar a aceitação de versões de produtos de software \\
 		\hline
-        Com respeito ao & A característica de qualidade do produto  Manutenibilidade e suas sub características ( Modularidade e Testabilidade )  \\
+        Com respeito ao & A característica de qualidade do produto Manutenibilidade e suas subcaracterísticas (Analisabilidade e Testabilidade) \\
 		\hline
 		Do ponto de vista de & Pesquisador \\
 		\hline
-		No contexto do  & Fiscalização na entrega de versões do produto, desenvolvido no âmbito da terceirização em contratos de desenvolvimento de software. \\
+		No contexto do & Fiscalização na entrega de versões do produto, desenvolvido no âmbito da terceirização em contratos de desenvolvimento de software. \\
 		\hline
     \end{tabular}
 \end{table}
@@ -56,35 +61,33 @@ A definição da questão de pesquisa foi elaborada utilizando a abordagem \text
 
 \section{Objetivo}
 
-O objetivo geral deste trabalho é avaliar a qualidade do produto Agenda DF, no contexto da terceirização do Governo do Distrito federal. Para alcançar esses objetivos, foram definidos os seguinte objetivos específicos:
+O objetivo geral deste trabalho é avaliar a qualidade do produto Agenda DF no contexto da terceirização do Governo do Distrito Federal. Para alcançar esse objetivo, foram definidos os seguintes objetivos específicos:
 
 \begin{enumerate}
 	\item Fundamentar teoricamente os conceitos de qualidade de software.
-	\item Fundamentar sobre o contexto institucional de contratação de desenvolvimento de software.
+	\item Fundamentar o contexto institucional de contratação de desenvolvimento de software.
 	\item Planejar um estudo de caso focado em observar a aceitação de versões de produto de software apoiado em evidências quantitativas e qualitativas de medidas e indicadores de qualidade.
-	\item Conduzir o estudo de caso, realizando a coleta de métricas, medidas e características no que diz respeito a Manutenibilidade.
+	\item Conduzir o estudo de caso, realizando a coleta de métricas, medidas e características no que diz respeito à Manutenibilidade.
 	\item Apresentar as conclusões desta investigação.
 \end{enumerate}
 
 \section{Composição e estrutura do trabalho}
 
-O presente trabalho está organizado em quatro capítulos, conforme descrito a seguir.
+O presente trabalho está organizado nos seguintes capítulos:
 
-O \textbf{Capítulo 1 — Introdução} apresenta o contexto que motivou a pesquisa, situando a problemática da qualidade de software no âmbito das contratações públicas de desenvolvimento. São definidos o problema de pesquisa, a questão principal orientada pelo framework \textit{Goal Question Metric} (GQM), os objetivos geral e específicos, e a composição do trabalho.
-
-O \textbf{Capítulo 2 — Referencial Teórico} consolida os conceitos fundamentais que sustentam a investigação. São abordados os principais modelos de qualidade de software — de McCall (1977) e Boehm (1978) à norma ISO/IEC 25010 — com ênfase nos atributos de Manutenibilidade, Modularidade e Testabilidade. Complementarmente, são discutidos o arcabouço legal das contratações públicas de TI no Brasil, incluindo a Lei n\textordmasculine\ 14.133/2021 e a Portaria SGD/MGI n\textordmasculine\ 750/2023, e os desafios inerentes à terceirização de desenvolvimento de software.
-
-O \textbf{Capítulo 3 — Revisão Estruturada da Literatura} descreve a condução da revisão bibliográfica sistemática realizada para responder às sete questões secundárias de pesquisa. São apresentados o protocolo baseado em \citeonline{kitchenham2007guidelines}, a \textit{string} de busca elaborada com o protocolo PICO adaptado, os critérios de seleção e os resultados da análise dos 30 artigos incluídos na leitura completa.
-
-O \textbf{Capítulo 4 — Planejamento do Estudo de Caso} detalha o delineamento metodológico da etapa empírica do trabalho. São definidos o objeto de estudo, o protocolo de coleta e análise de métricas de qualidade, e os instrumentos que orientarão a condução da investigação sobre o produto de software Agenda DF no contexto do Governo do Distrito Federal.
-
-Por fim, os elementos pós-textuais compreendem as referências bibliográficas, os apêndices e os anexos pertinentes ao trabalho.
+\begin{itemize}
+    \item \textbf{Capítulo 1: Introdução:} contextualização do problema, questão de pesquisa, objetivos e estrutura do trabalho.
+    \item \textbf{Capítulo 2: Referencial Teórico:} modelos de qualidade de software, arcabouço legal das contratações públicas de TI e desafios da terceirização.
+    \item \textbf{Capítulo 3: Revisão Estruturada da Literatura:} protocolo, condução e síntese dos resultados da revisão sistemática sobre manutenibilidade em contratos de terceirização.
+    \item \textbf{Capítulo 4: Planejamento do Estudo de Caso:} definição do caso, questões de pesquisa, métricas, fontes de dados e instrumentação.
+    \item \textbf{Capítulo 5: Conclusão:} balanço das atividades realizadas e planejamento da segunda etapa da monografia.
+\end{itemize}
 
 \section{Cronograma e Atividades}
 
 \subsection{Primeira etapa}
 
-Nesta é detalhado a primeira etapa da monografia, que consiste no levantamento inicial do problema a ser explorado, e a definição da proposta empírica. Abaixo temos o Cronograma correspondentes
+Nesta seção é detalhada a primeira etapa da monografia, que consiste no levantamento inicial do problema a ser explorado e na definição da proposta empírica. Abaixo está o cronograma correspondente.
 
 
 \begin{figure}
@@ -97,15 +100,28 @@ Nesta é detalhado a primeira etapa da monografia, que consiste no levantamento 
 
 
 \begin{enumerate}
-	\item Contextualização sobre engenharia de software experimental, entendimento geral dos principais métodos utilizados e pesquisas empíricas, em especial a revisão sistemática da literatura, o estudo de caso, entrevista e questionários que serão fundamentais para a condução do trabalho proposto.
-	\item Definição do GQM, apoio para a construção da pergunta principal de pesquisa.
-	\item Elaboração do protocolo de revisão da literatura, estruturado e adaptado do protocolo de revisão sistemática da literatura, proposto por \citeonline{kitchenham2007guidelines}. Essa sistematização organizará nossos processo de revisão da literatura pertinente.
-	\item Seleção dos artigos
-	\item Análise do material selecionado
-	\item Definição da proposta de solução
-	\item Redação da monografia
-	\item Revisão
-	\item Defesa
+	\item Contextualização sobre engenharia de software experimental, entendimento geral dos principais métodos utilizados e pesquisas empíricas, em especial a revisão sistemática da literatura, o estudo de caso, entrevistas e questionários que serão fundamentais para a condução do trabalho proposto.
+	\item Definição do GQM, como apoio para a construção da pergunta principal de pesquisa.
+	\item Elaboração do protocolo de revisão da literatura, estruturado e adaptado do protocolo de revisão sistemática da literatura proposto por \citeonline{kitchenham2007guidelines}. Essa sistematização organizará o nosso processo de revisão da literatura pertinente.
+	\item Seleção dos artigos.
+	\item Análise do material selecionado.
+	\item Definição da proposta de solução.
+	\item Redação da monografia.
+	\item Revisão.
+	\item Defesa.
 \end{enumerate}
 
+\section*{Declaração de Uso de Inteligência Artificial Generativa}
+\addcontentsline{toc}{section}{Declaração de Uso de Inteligência Artificial Generativa}
 
+Em atendimento à Portaria CNPq n\textordmasculine\ 2.664/2026, o autor declara o uso das seguintes ferramentas de Inteligência Artificial Generativa na elaboração deste capítulo:
+
+\begin{enumerate}
+    \item \textbf{Ferramenta:} Claude Sonnet 4.6 \\
+    \textbf{Empresa desenvolvedora:} Anthropic \\
+    \textbf{Versão/período de uso:} julho de 2026 \\
+    \textbf{Finalidade:} revisão ortográfica, gramatical e semântica de rascunhos previamente elaborados pelo autor, sem alteração do conteúdo ou sentido do texto \\
+    \textbf{Parte do trabalho aplicada:} Capítulo 1 integralmente
+\end{enumerate}
+
+O autor declara estar ciente do uso da ferramenta de Inteligência Artificial Generativa acima descrita e assume integral responsabilidade pelo conteúdo, pela veracidade das informações e pelas conclusões apresentadas neste capítulo, tendo revisado criticamente todo o material gerado ou auxiliado por tal ferramenta.

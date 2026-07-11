@@ -1,0 +1,72 @@
+\chapter[Conclusão]{Conclusão}
+
+Este capítulo retoma as atividades propostas na Seção~\ref{fig-cronograma} para avaliar sua execução, apresenta os resultados obtidos ao final da primeira etapa do trabalho e descreve o planejamento para a fase seguinte da monografia.
+
+\section{Atividades Propostas}
+
+A Tabela~\ref{tab:atividades-concluidas-tcc-1} apresenta a situação das atividades previstas para a primeira etapa da monografia.
+
+\begin{table}[H]
+    \centering
+    \caption{Situação das Atividades da Primeira Etapa}
+    \begin{tabular}{|p{10cm}|p{3cm}|}
+        \hline
+        \textbf{Atividade} & \textbf{Situação} \\
+        \hline
+        Contextualização sobre Engenharia de Software Experimental & Concluída \\
+        \hline
+        Definição do GQM & Concluída \\
+        \hline
+        Elaboração do protocolo de revisão da literatura & Concluída \\
+        \hline
+        Seleção dos artigos & Concluída \\
+        \hline
+        Análise do material selecionado & Concluída \\
+        \hline
+        Definição da proposta de solução & Concluída \\
+        \hline
+        Redação da monografia & Concluída \\
+        \hline
+        Revisão & Concluída \\
+        \hline
+        Defesa & Agendada \\
+        \hline
+    \end{tabular} \\[0.5em]
+    {\small\textit{Fonte: Autor.}}
+    \label{tab:atividades-concluidas-tcc-1}
+\end{table}
+
+\section{Resultados Obtidos}
+
+A primeira etapa desta monografia consolidou os fundamentos teóricos, o embasamento bibliográfico e o planejamento metodológico necessários para a condução da etapa empírica. As contribuições obtidas estão organizadas em três frentes: revisão da literatura, referencial teórico e planejamento do estudo de caso.
+
+A Revisão Estruturada da Literatura, conduzida com base no protocolo de \citeonline{kitchenham2007guidelines} e orientada pelo protocolo PICO adaptado, resultou na análise de 50 artigos recuperados da base Scopus, dos quais 30 foram incluídos para leitura completa. O corpus é composto majoritariamente por artigos de periódicos (60\%), com publicações distribuídas ao longo de mais de três décadas, evidenciando a maturidade e a continuidade do debate sobre qualidade de software em contextos de terceirização. A análise respondeu às sete questões secundárias de pesquisa, permitindo caracterizar: modelos de qualidade para manutenibilidade; métricas de modularidade e testabilidade; ferramentas de análise estática; mecanismos de agregação de resultados; e práticas de aceitação de \textit{releases} em contratos de desenvolvimento de software.
+
+Os principais achados da revisão apontam que: (i) a ISO/IEC 25010 e o modelo SQALE são as referências de qualidade mais consolidadas para o contexto de terceirização; (ii) métricas de complexidade ciclomática, cobertura de testes, acoplamento e duplicação de código são os indicadores mais frequentemente empregados na literatura para aferir manutenibilidade; (iii) ferramentas como SonarQube, Better Code Hub e CAST Highlight são amplamente adotadas para coleta automatizada de métricas e (iv) a literatura converge para a necessidade de que os indicadores de contratação e aceitação sejam o menos subjetivos possível \cite{gorski2006evaluation}, lacuna que motiva diretamente o estudo de caso planejado.
+
+No referencial teórico, foram sistematizados os principais modelos de qualidade de software, a saber, de McCall (1977) e Boehm (1978) até a norma vigente ISO/IEC 25010. Foram também apresentados o arcabouço legal das contratações públicas de TI no Brasil (Lei n\textordmasculine~14.133/2021 e Portaria SGD/MGI n\textordmasculine~750/2023), os modelos operacionais SQALE, Q-RAPIDS e MeasureSoftGram, e os principais desafios estruturais da terceirização de desenvolvimento de software no setor público.
+
+O planejamento do estudo de caso estabeleceu o objeto de investigação como a plataforma Agenda DF, desenvolvida sob contrato de fábrica de \textit{software} ágil entre a Secretaria de Estado de Economia do Distrito Federal (SEEC-DF) e a empresa CAST Informática S/A. Foram definidas duas questões específicas de pesquisa, com métricas derivadas pelo método GQM: a Questão 1 investiga o nível de Testabilidade por meio de indicadores de execução da suíte de testes automatizados (testes aprovados, cobertura, tempo de CI); e a Questão 2 investiga a evolução da Modularidade por meio de indicadores de complexidade estrutural, duplicação e Dívida Técnica (SQI). A instrumentação prevê o uso integrado de SonarQube, GitHub Actions e MeasureSoftGram para extração e consolidação/agregação das métricas, complementados por entrevistas com a comissão técnica do contrato para triangulação qualitativa dos dados.
+
+\section{Cronograma da Segunda Etapa da Monografia}
+
+A segunda etapa da monografia corresponde à condução e documentação do estudo de caso planejado. As primeiras atividades envolvem a incorporação das correções e ajustes apontados pela banca ao término desta primeira etapa. Em seguida, será realizada a preparação da infraestrutura de coleta: configuração do SonarQube integrado ao repositório do Agenda DF e do MeasureSoftGram para processamento das métricas históricas, cuja base de dados cobre o período de início do desenvolvimento até 27 de maio de 2026, formalizada pela solicitação LAI n\textordmasculine~011205/2026.
+
+Com a infraestrutura estabelecida, procede-se à coleta e análise dos dados quantitativos: extração das métricas de testabilidade e modularidade para cada \textit{release} integrada na \textit{branch} principal, cálculo dos indicadores derivados e aplicação da análise longitudinal para identificar tendências de evolução da qualidade interna ao longo do ciclo de entregas. Em paralelo, serão conduzidas as entrevistas com os fiscais técnicos do contrato, cujos dados qualitativos serão tratados por categorização temática e cruzados com os resultados quantitativos para a triangulação metodológica.
+
+Por fim, serão realizadas a análise integrada dos resultados, a redação do capítulo de resultados e discussão, a revisão geral da monografia e, por último, a defesa final do trabalho.
+
+\section*{Declaração de Uso de Inteligência Artificial Generativa}
+\addcontentsline{toc}{section}{Declaração de Uso de Inteligência Artificial Generativa}
+
+Em atendimento à Portaria CNPq n\textordmasculine\ 2.664/2026, o autor declara o uso das seguintes ferramentas de Inteligência Artificial Generativa na elaboração deste capítulo:
+
+\begin{enumerate}
+    \item \textbf{Ferramenta:} Claude Sonnet 4.6 \\
+    \textbf{Empresa desenvolvedora:} Anthropic \\
+    \textbf{Versão/período de uso:} julho de 2026 \\
+    \textbf{Finalidade:} revisão ortográfica, gramatical e semântica de rascunhos previamente elaborados pelo autor, sem alteração do conteúdo ou sentido do texto \\
+    \textbf{Parte do trabalho aplicada:} Capítulo 5 integralmente
+\end{enumerate}
+
+O autor declara estar ciente do uso da ferramenta de Inteligência Artificial Generativa acima descrita e assume integral responsabilidade pelo conteúdo, pela veracidade das informações e pelas conclusões apresentadas neste capítulo, tendo revisado criticamente todo o material gerado ou auxiliado por tal ferramenta.
